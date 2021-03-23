@@ -35,6 +35,7 @@ try{
             </div>
         </header>
         <main class="profile-container">
+            <h2>PROFILE</h2>
             <div class="img">
                 <img id="profile" alt="profile picture" src="https://randomuser.me/api/portraits/women/<?= $userID?>.jpg">
             </div>
