@@ -34,5 +34,16 @@ try{
                 <a class="login" href="">Log Out</a>
             </div>
         </header>
+        <main class="profile-container">
+            <div class="img">
+                <img id="profile" alt="profile picture" src="https://randomuser.me/api/portraits/women/<?= $userID?>.jpg">
+            </div>
+            <div class="profile">
+                <strong>Name: </strong><span><?= $user["firstname"] . " " . $user["lastname"]?></span>
+                <strong>Email: </strong><span><?= $user["email"]?></span>
+                <strong>City: </strong><span><?= $user["city"]?></span>
+                <strong>Country: </strong><span><?= $user["country"]?></span>
+            </div>
+        </main>
     </body>
 </html>

@@ -1,34 +1,81 @@
+body{
+    background-color: #1f0033;
+}
+.topnav {
+    overflow: hidden;
+    background-color: #471d63;
+    position: relative;
+    border-radius: 10px;
+}
+.hidden{
+    display: none !important;
+}
+.topnav a, .topnav .logo {
+    float: left;
+    color: darkgray;
+    padding: 14px 30px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+.topnav a.icon{
+    float: right;
+    border-radius: inherit;
+}
+.topnav a:hover{
+    background-color: #5c0099;
+    color: #e6e6e6;
+}
+.topnav .active{
+    background-color: #2b004d;
+    color: white;
+}
+main.profile-container{
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #6749ab;
+    display: grid;
+    width: auto;
+    grid-gap: 10px;
+    grid-template-columns: 250px auto;
+    border: solid darkslateblue;
+    border-radius: 15px;
+}
+div.profile{
+    background-color: #40037d;
+    padding: 15px;
+    width: 90%;
+    color: lavender;
+    display: grid;
+    grid-template-columns: 80px 200px;
+    border-style: groove;
+    border-color: #4818b9;
+    border-radius: 20px;
+}
+.profile strong, .profile span{
+    border-bottom: thin solid lightsteelblue;
+    padding-top: 10px;
+}
+img#profile{
+    width: 200px;
+    border-style: groove;
+    border-color: #4818b9;
+}
+/* #9466ff */
 @media screen and (max-width: 500px){
 /*    styling for hamburger nav based off of https://www.w3schools.com/howto/howto_js_mobile_navbar.asp */
-    .topnav {
-        overflow: hidden;
-        background-color: #471d63;
-        position: relative;
-    }
-    .hidden{
-        display: none !important;
-    }
     .topnav a, .topnav .logo {
-        color: darkgray;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-        display: block;
+        float: none;
     }
     .topnav a.icon{
+        float: none;
         background: #29123b;
         display: block;
         position: absolute;
         right: 0;
         top: 0;
     }
-    .topnav a:hover{
-        background-color: #5c0099;
-        color: #e6e6e6;
+    main.profile-container{
+        grid-template-columns: 350px;
     }
-    .topnav .active{
-        background-color: #29123b;
-        color: white;
-    }
-    /* #5c0099  */
 }
