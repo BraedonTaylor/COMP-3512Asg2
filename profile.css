@@ -60,7 +60,7 @@ div.profile{
     width: auto;
     color: lavender;
     display: grid;
-    grid-template-columns: 80px auto;
+    grid-template-columns: 100px auto;
     border-style: groove;
     border-color: #4818b9;
     border-radius: 20px;
@@ -68,6 +68,7 @@ div.profile{
 .profile strong, .profile span{
     border-bottom: thin solid lightsteelblue;
     padding: 15px;
+    font-size: 17px;
 }
 div.img{
     grid-column: 1;
@@ -99,8 +100,9 @@ img#profile{
     div.profile{
         grid-row: 3;
         grid-column: 1;
-        grid-template-columns: 75px 150px;
+        grid-template-columns: 90px auto;
         width: auto;
     }
+    /*.profile strong, .profile span{font-size: 16px;}*/
     h2{text-align: left;}
 }
