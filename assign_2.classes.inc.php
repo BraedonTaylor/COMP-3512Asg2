@@ -42,6 +42,6 @@ class UserDB {
     public function getUser($id){
         $sql = self::$baseSQL . " WHERE id=?";
         $statement = DatabaseHelper::runQuery($this->pdo, $sql, array($id));
-        return $statement->fetch();
+        return $statement->fetch(PDO::FETCH_ASSOC);
     }
 }
