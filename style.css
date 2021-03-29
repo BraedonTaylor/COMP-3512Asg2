@@ -1,0 +1,153 @@
+.topnav {
+    margin: 20px 20px;
+    overflow: hidden;
+    background-color: #94b5c0;
+    position: relative;
+    border-radius: 10px;
+}
+
+.hidden{
+    display: none !important;
+}
+
+body {
+    background-color: #dbf6e9;
+}
+
+.topnav a, .topnav .logo {
+    float: left;
+    color: #1e6f5c;
+    padding: 14px 30px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+.topnav a.icon{
+    float: right;
+    border-radius: inherit;
+}
+.topnav a:hover{
+    background-color: #5f939a;
+    color: #e6e6e6;
+}
+.topnav .active{
+    background-color: #2b004d;
+    color: white;
+}
+
+.homeBox:hover{
+    background-color: #5f939a;
+    color: #e6e6e6;
+}
+
+main.home-container, main.favorites-container {
+    color: #1e6f5c;
+    margin: 20px;
+    padding: 20px;
+    display: grid;
+    width: auto;
+    grid-gap: 20px;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+.homeBox, .favoritesListing {
+    /* text-align: center; */
+    font-family: "roboto";
+    font-weight: bold;
+    background-color: #94b5c0;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 8px 8px 20px #1a8fc5;
+}
+
+#titleText, .homeBox, #navlinks a {
+    font-family: "roboto";
+}
+
+.logo {
+    vertical-align: middle;
+    height: 20px;
+}
+
+.favoritesIcon {
+    height: 50px;
+    max-width: 100px;
+}
+
+.favorites {
+    display: inline-block;
+}
+
+#titleText {
+    text-align: center;
+    text-shadow: 2px 2px #9ede73;
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+}
+
+#aboutBox {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+}
+
+#companiesBox {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+}
+
+#portfolioBox {
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 1;
+}
+
+#favoritesBox {
+    grid-column: 2 / span 1;
+    grid-row: 3 / span 1;
+}
+
+#profileBox {
+    grid-column: 1 / span 1;
+    grid-row: 4 / span 1;
+}
+
+#logoutBox {
+    grid-column: 2 / span 1;
+    grid-row: 4 / span 1;
+}
+
+/* favorites */
+#aapl {
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 1;
+}
+
+#amd {
+    grid-column: 1 / span 2;
+    grid-row: 3 / span 1;
+}
+
+#amzn {
+    grid-column: 1 / span 2;
+    grid-row: 4 / span 1;
+}
+
+#msft {
+    grid-column: 1 / span 2;
+    grid-row: 5 / span 1;
+}
+
+@media screen and (max-width: 500px){
+    /*    styling for hamburger nav based off of https://www.w3schools.com/howto/howto_js_mobile_navbar.asp */
+        .topnav a, .topnav .logo {
+            float: none;
+        }
+        .topnav a.icon{
+            float: none;
+            background: #5f939a;
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    }
