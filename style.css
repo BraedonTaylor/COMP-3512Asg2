@@ -35,7 +35,7 @@ body {
     color: white;
 }
 
-.homeBox:hover{
+.homeBox:hover, #removeAll:hover, .button:hover {
     background-color: #5f939a;
     color: #e6e6e6;
 }
@@ -47,7 +47,7 @@ main.home-container, main.favorites-container {
     display: grid;
     width: auto;
     grid-gap: 20px;
-    grid-template-columns: auto;
+    grid-template-columns: 25% 25% 25% auto;
     grid-template-rows: auto;
 }
 
@@ -61,7 +61,7 @@ main.home-container, main.favorites-container {
     box-shadow: 8px 8px 20px #1a8fc5;
 }
 
-#titleText, .homeBox, #navlinks a {
+#homeHeader, #favoritesHeader, .homeBox, #navlinks a {
     font-family: "roboto";
 }
 
@@ -79,75 +79,141 @@ main.home-container, main.favorites-container {
     display: inline-block;
 }
 
-#titleText {
+#favoritesHeader, #homeHeader {
     text-align: center;
     text-shadow: 2px 2px #9ede73;
-    grid-column: 1 / span 2;
+    grid-column: 2 / span 2;
     grid-row: 1 / span 1;
 }
 
 #aboutBox {
-    grid-column: 1 / span 1;
+    grid-column: 2 / span 2;
     grid-row: 2 / span 1;
 }
 
 #companiesBox {
-    grid-column: 2 / span 1;
-    grid-row: 2 / span 1;
+    grid-column: 2 / span 2;
+    grid-row: 3 / span 1;
 }
 
 #portfolioBox {
-    grid-column: 1 / span 1;
-    grid-row: 3 / span 1;
+    grid-column: 2 / span 2;
+    grid-row: 4 / span 1;
 }
 
 #favoritesBox {
-    grid-column: 2 / span 1;
-    grid-row: 3 / span 1;
+    grid-column: 2 / span 2;
+    grid-row: 5 / span 1;
 }
 
 #profileBox {
-    grid-column: 1 / span 1;
-    grid-row: 4 / span 1;
+    grid-column: 2 / span 2;
+    grid-row: 6 / span 1;
 }
 
 #logoutBox {
-    grid-column: 2 / span 1;
-    grid-row: 4 / span 1;
+    grid-column: 2 / span 2;
+    grid-row: 7 / span 1;
 }
 
 /* favorites */
 #aapl {
-    grid-column: 1 / span 2;
+    grid-column: 1 / span 4;
     grid-row: 2 / span 1;
 }
 
 #amd {
-    grid-column: 1 / span 2;
+    grid-column: 1 / span 4;
     grid-row: 3 / span 1;
 }
 
 #amzn {
-    grid-column: 1 / span 2;
+    grid-column: 1 / span 4;
     grid-row: 4 / span 1;
 }
 
 #msft {
-    grid-column: 1 / span 2;
+    grid-column: 1 / span 4;
     grid-row: 5 / span 1;
 }
 
-@media screen and (max-width: 500px){
-    /*    styling for hamburger nav based off of https://www.w3schools.com/howto/howto_js_mobile_navbar.asp */
-        .topnav a, .topnav .logo {
-            float: none;
-        }
-        .topnav a.icon{
-            float: none;
-            background: #5f939a;
-            display: block;
-            position: absolute;
-            right: 0;
-            top: 0;
-        }
+#removeAll {
+    grid-row: 6 / span 1;
+}
+
+.button, #removeAll {
+    background-color: #4a7edd; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 12px;
+    text-align: center;
+    border-radius: 2px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.favoritesIcon  { left: 0%; position: relative; }
+#favoritesSymbol { left: 5%; position: relative; }
+#favoritesName  { left: 10%; position: relative; }
+#removeFavorite  { left: 15%; position: relative; }
+
+@media screen and (min-width: 500px) and (max-width: 600px) {
+/*    styling for hamburger nav based off of https://www.w3schools.com/howto/howto_js_mobile_navbar.asp */
+    .topnav a, .topnav .logo {
+        float: none;
     }
+    .topnav a.icon{
+        float: none;
+        background: #5f939a;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    main.home-container, main.favorites-container {
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+    }
+
+    #homeHeader {
+        grid-column: 1 / span 2;
+        grid-row: 1 / span 1;
+    }
+
+    #favoritesHeader {
+        grid-column: 1 / span 4;
+        grid-row: 1 / span 1;
+    }
+
+    #aboutBox {
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 1;
+    }
+    
+    #companiesBox {
+        grid-column: 2 / span 1;
+        grid-row: 2 / span 1;
+    }
+    
+    #portfolioBox {
+        grid-column: 1 / span 1;
+        grid-row: 3 / span 1;
+    }
+    
+    #favoritesBox {
+        grid-column: 2 / span 1;
+        grid-row: 3 / span 1;
+    }
+    
+    #profileBox {
+        grid-column: 1 / span 1;
+        grid-row: 4 / span 1;
+    }
+    
+    #logoutBox {
+        grid-column: 2 / span 1;
+        grid-row: 4 / span 1;
+    }
+}

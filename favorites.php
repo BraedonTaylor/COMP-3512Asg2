@@ -35,30 +35,30 @@ try{
             </div>
         </header>
         <main class="favorites-container">
-            <h2 id="titleText">Favorites</h2>
+            <h2 id="favoritesHeader">Favorites</h2>
             <div id="aapl" class="favoritesListing">
                 <img class="favorites favoritesIcon" alt="Apple" src="images/AAPL.svg">
                 <div class="favorites" id="favoritesSymbol">AAPL</div>
                 <div class="favorites" id="favoritesName">Apple</div>
-                <button class="favorites" id="removeFavorite">Remove</button>
+                <button class="favorites button" id="removeFavorite">Remove</button>
             </div>
             <div id="amd" class="favoritesListing">
                 <img class="favorites favoritesIcon" alt="AMD" src="images/AMD.svg">
                 <div class="favorites" id="favoritesSymbol">AMD</div>
-                <div class="favorites" id="favoritesName">Adv. MicroDevices</div>
-                <button class="favorites" id="removeFavorite">Remove</button>
+                <div class="favorites" id="favoritesName">AMD</div>
+                <button class="favorites button" id="removeFavorite">Remove</button>
             </div>
             <div id="amzn" class="favoritesListing">
                 <img class="favorites favoritesIcon" alt="Amazon" src="images/AMZN.svg">
                 <div class="favorites" id="favoritesSymbol">AMZN</div>
                 <div class="favorites" id="favoritesName">Amazon</div>
-                <button class="favorites" id="removeFavorite">Remove</button>
+                <button class="favorites button" id="removeFavorite">Remove</button>
             </div>
             <div id="msft" class="favoritesListing">
                 <img class="favorites favoritesIcon" alt="Microsoft" src="images/MSFT.svg">
                 <div class="favorites" id="favoritesSymbol">MSFT</div>
                 <div class="favorites" id="favoritesName">Microsoft</div>
-                <button class="favorites" id="removeFavorite">Remove</button>
+                <button class="favorites button" id="removeFavorite">Remove</button>
             </div>
             <button id="removeAll">Remove All</button>
         </main>

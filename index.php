@@ -18,6 +18,7 @@ try{
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="style.css">
         <script src="navbar.js"></script>
+        <script src="home.js"></script>
     </head>
     <body>
 <!--    Julianna's take on the hamburger nav bar. Based off of https://www.w3schools.com/howto/howto_js_mobile_navbar.asp -->
@@ -35,7 +36,7 @@ try{
             </div>
         </header>
         <main class="home-container">
-            <h2 id="titleText">Stock Browser</h2>
+            <h2 id="homeHeader">Stock Browser</h2>
             <div id="aboutBox" class="homeBox">About</div>
             <div id="companiesBox" class="homeBox">Companies</div>
             <!-- <div id="loginBox" class="homeBox">Login</div>
