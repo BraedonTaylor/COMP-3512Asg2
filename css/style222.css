@@ -1,0 +1,147 @@
+body {
+    background-color: black;
+    font-family: Open Sans, sans-serif;
+    font-size: 0.8rem;
+}
+
+#header {
+    grid-column: 1;
+    grid-row: 1;
+    height: 6rem;
+    width: 375px;
+}
+
+.box {
+  color: black;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 150%;
+  background-color: #e5eae0;
+}
+
+.b {
+    grid-column: 1;
+    grid-row: 2;
+    width: 375px;
+    height: 810px;
+}
+
+.b section {
+    display: block;
+    height: 92%;
+}
+
+.buttons {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #87a3bd;
+    color: white;
+    border-radius: 2px;
+}
+
+#companyList {
+    display: none;
+    grid-gap: 1px;
+    grid-template-columns: 140px 160px 50px;
+    font-size: 0.8rem;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.clogo {
+    max-height: 20px;
+    max-width: 100px;
+}
+
+#magnify {
+    display: none;
+    position: fixed;
+    background-color: #e5eae0;
+    border: 1px solid black;
+}
+
+#magImage {
+    max-height: 100px;
+    width: 200px;
+    padding: 5px;
+}
+
+@media screen and (min-width:376px) {
+
+    body {
+        margin: 10px;
+        background-color: black;
+        font-family: Open Sans, sans-serif;
+        font-size: 0.8rem;
+    }
+    
+    .container {
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 6rem auto;
+      color: #444;
+    }
+    
+    #header {
+        grid-column: 1 / span 3;
+        grid-row: 1;
+        height: 5rem;
+        width: 99%;
+    }
+    
+    .box {
+      color: black;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 150%;
+      background-color: #e5eae0;
+    }
+    
+    .b {
+        grid-column: 2 / span 1;
+        grid-row: 2;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .b section {
+        display: block;
+        height: 860px;
+    }
+    
+    .buttons {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #87a3bd;
+        color: white;
+        border-radius: 2px;
+    }
+    
+    #companyList {
+        display: none;
+        grid-gap: 15px;
+        grid-template-columns: 250px 400px 200px;
+        width: 900px;
+        height: 780px;
+        overflow-y: scroll;
+        font-size: 1rem;
+    }
+    
+    #magnify {
+        display: none;
+        position: fixed;
+        background-color: #e5eae0;
+        border: 1px solid black;
+    }
+    
+    #magImage {
+        max-height: 200px;
+        width: 300px;
+        padding: 5px;
+    }
+
+    .clogo {
+        max-height: 20px;
+        max-width: 140px;
+    }
+
+}

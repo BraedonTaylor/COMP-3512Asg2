@@ -1,0 +1,258 @@
+body {
+    background-color: black;
+    font-family: Open Sans, sans-serif;
+    font-size: 0.8rem;
+}
+
+#header {
+    grid-column: 1;
+    grid-row: 1;
+    height: 6rem;
+    width: 340px;
+}
+
+.container {
+    grid-template-columns: 1;
+    grid-template-rows: 2;
+}
+
+.image {
+    width: 35px;
+    grid-row: 1;
+}
+
+.stockSymbol {
+    grid-row: 2;
+    font-size: 0.8rem;
+}
+
+.stockName {
+    grid-row: 3;
+    font-size: 0.8rem;
+}
+
+.numShares {
+    grid-row: 4;
+    font-size: 0.8rem;
+}
+
+.closeVal {
+    grid-row: 5;
+    font-size: 0.8rem;
+}
+
+.shareValue {
+    grid-row: 6;
+    font-size: 0.8rem;
+}
+
+#stockView {
+    display: grid;
+    grid-column: 2;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    overflow-y: scroll;
+}
+
+.box {
+    color: black;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 150%;
+    background-color: #e5eae0;
+    height: 625px;
+    display: grid;
+    grid-template-columns: 50px, auto;
+    grid-gap: 10px;
+}
+
+#portHeader {
+    grid-column: 1 / span 2;
+}
+
+.headerBox {
+    padding-top: 12px;
+}
+
+#blank {
+    grid-row: 1;
+    height: 11px;
+}
+
+#symbolHeader {
+    grid-row: 2;
+    height: 53px;
+}
+
+#nameHeader {
+    grid-row: 3;
+    height: 53px;
+}
+
+#owned {
+    grid-row: 4;
+    height: 27px;
+}
+
+#close {
+    grid-row: 5;
+    height: 27px;
+}
+
+#worth {
+    grid-row: 6;
+    height: 27px;
+}
+
+#totalPort {
+    grid-column: 1 / span 4;
+    font-size: 1rem;
+    margin-top: 50px;
+}
+
+h2 {
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+
+#headerBox {
+    grid-column: 1;
+}
+
+.b {
+    width: 375px;
+}
+
+@media screen and (min-width:376px) {
+
+    body {
+        font-size: 1rem;
+    }
+
+    .container {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 2;
+    }
+
+    #header {
+        grid-column: 1 / span 3;
+        grid-row: 1;
+        height: 6rem;
+        width: 99%;
+    }
+
+    #portHeader {
+        height: 50px;
+    }
+
+    
+
+    .box {
+        color: black;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 150%;
+        background-color: #e5eae0;
+        height: 800px;
+        display: grid;
+        grid-template-rows: auto auto auto;
+        grid-template-columns: 1;
+        grid-gap: 10px;
+    }
+    /* 
+    #headerbox {
+        grid-row: 2;
+        display: grid;
+    }
+    
+    #portHeader {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    #blank {
+        grid-column: 1;       
+        grid-row: 1;
+    }
+    
+    #symbolHeader {
+        grid-column: 2;
+        grid-row: 1;
+    }
+    
+    #nameHeader {
+        grid-column: 3;
+        grid-row: 1;
+    }
+    
+    #owned {
+        grid-column: 4;  
+        grid-row: 1;
+    }
+    
+    #close {
+        grid-column: 5;
+        grid-row: 1;
+    }
+    
+    #worth {
+        grid-column: 6; 
+        grid-row: 1;
+    }
+    
+    #totalPort {
+        grid-column: 1 / span 4;
+        font-size: 1rem;
+        margin-top: 50px;
+    }
+    
+    h2 {
+        font-size: 1rem;
+    }
+
+    .b {
+        width: 375px;
+    } 
+
+    .image {
+        width: 35px;
+        grid-column: 1;
+    }
+    
+    .stockSymbol {
+        grid-column: 2;
+        font-size: 0.8rem;
+    }
+    
+    .stockName {
+        grid-column: 3;
+        font-size: 0.8rem;
+    }
+    
+    .numShares {
+        grid-column: 4;
+        font-size: 0.8rem;
+    }
+    
+    .closeVal {
+        grid-column: 5;
+        font-size: 0.8rem;
+    }
+    
+    .shareValue {
+        grid-column: 6;
+        font-size: 0.8rem;
+    }
+    
+    #stockView {
+        grid-row: 3;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-gap: 10px;
+        overflow-x: scroll;
+    } */
+
+}
