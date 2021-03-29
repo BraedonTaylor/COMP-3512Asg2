@@ -7,11 +7,9 @@ body{
     background-color: #471d63;
     position: relative;
     border-radius: 10px;
-    border: solid midnightblue;
+    border: solid #140033;
 }
-.hidden{
-    display: none !important;
-}
+
 .topnav a, .topnav .logo {
     float: left;
     color: darkgray;
@@ -21,8 +19,8 @@ body{
     display: block;
 }
 .topnav a.icon{
-    float: right;
-    border-radius: inherit;
+    display: none;
+    border-radius: 7.5px;
 }
 .topnav a:hover{
     background-color: #5c0099;
@@ -94,6 +92,9 @@ img#profile{
         position: absolute;
         right: 0;
         top: 0;
+    }
+    .hidden{
+        display: none !important;
     }
     main.profile-container {
         grid-template-columns: auto;
