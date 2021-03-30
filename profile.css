@@ -1,18 +1,17 @@
-body{
-    background-color: #1f0033;
+body {
+    background-color: #dbf6e9;
 }
 .topnav {
     margin: 20px 20px;
     overflow: hidden;
-    background-color: #471d63;
+    background-color: #94b5c0;
     position: relative;
     border-radius: 10px;
-    border: solid #140033;
 }
-
+#navlinks{font-family: "roboto";}
 .topnav a, .topnav .logo {
     float: left;
-    color: darkgray;
+    color: #1e6f5c;
     padding: 14px 30px;
     text-decoration: none;
     font-size: 17px;
@@ -20,52 +19,51 @@ body{
 }
 .topnav a.icon{
     display: none;
+    background-color: #1e6f5c;
+    color: white;
     border-radius: 7.5px;
 }
 .topnav a:hover{
-    background-color: #5c0099;
+    background-color: #5f939a;
     color: #e6e6e6;
 }
 .topnav .active{
-    background-color: #2b004d;
+    background-color: #1e6f5c;
     color: white;
 }
 h2{
+    font-family: "roboto";
     grid-column: span 2;
     text-align: center;
-    padding: 10px;
-    background-color: #2b004d;
-    color: white;
-    border-radius: 17px;
-    border: solid black;
+    text-shadow: 2px 2px #9ede73;
+    font-weight: bold;
+    background-color: #94b5c0;
+    border-radius: 5px;
+    padding: 20px;
 }
 main.profile-container{
+    color: #1e6f5c;
     margin: 20px;
     padding: 20px;
-    background-color: #6749ab;
     display: grid;
     width: auto;
     grid-gap: 10px;
     grid-template-columns: 250px auto;
     grid-template-rows: auto 250px;
-    border: solid darkslateblue;
-    border-radius: 15px;
 }
 div.profile{
     grid-column: 2;
     grid-row: 2;
-    background-color: #40037d;
+    background-color: #94b5c0;
     padding: 15px;
     width: auto;
-    color: lavender;
     display: grid;
     grid-template-columns: 100px auto;
-    border-style: groove;
-    border-color: #4818b9;
-    border-radius: 20px;
+    border-radius: 5px;
 }
 .profile strong, .profile span{
-    border-bottom: thin solid lightsteelblue;
+    font-family: "roboto";
+    border-bottom: thin solid #1a8fc5;
     padding: 15px;
     font-size: 17px;
 }
@@ -76,18 +74,18 @@ div.img{
 img#profile{
     width: 200px;
     border-style: outset;
-    border-color: #4818b9;
+    border-color: #5f939a;
     border-width: thick;
+    box-shadow: 8px 8px 20px #1a8fc5;
 }
 /* #9466ff */
 @media screen and (max-width: 500px){
-/*    styling for hamburger nav based off of https://www.w3schools.com/howto/howto_js_mobile_navbar.asp */
+/*    styling for hamburger nav based off of https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
     .topnav a, .topnav .logo {
         float: none;
     }
     .topnav a.icon{
         float: none;
-        background: #29123b;
         display: block;
         position: absolute;
         right: 0;
@@ -105,6 +103,5 @@ img#profile{
         grid-template-columns: 90px auto;
         width: auto;
     }
-    /*.profile strong, .profile span{font-size: 16px;}*/
     h2{text-align: left;}
 }
