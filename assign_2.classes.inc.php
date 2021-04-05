@@ -45,3 +45,16 @@ class UserDB {
         return $statement->fetch();
     }
 }
+
+class FavoritesDB {
+    private static $baseSQL = "SELECT favoriteid, userid, symbol FROM favorites";
+    public function __construct($connection){
+        $this->pdo = $connection;
+    }
+
+    public function getUserFavorites($id) {
+        $sql = self::$baseSQL . " WHERE userid=?";
+        $statement = DatabaseHelper::runQuery($this->pdo, $sql, array($id));
+        return $statement->fetchAll();
+    }
+}

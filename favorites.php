@@ -4,8 +4,10 @@ require_once ("index.inc.php");
 try{
     $conn = DatabaseHelper::createConnection(array(DBCONNSTRING, DBUSER, DBPASS));
     $userGateway = new UserDB($conn);
+    $favGateway = new FavoritesDB($conn);
     $userID = 5;
     $user = $userGateway->getUser($userID);
+    $fav = $favGateway->getUserFavorites($userID);
 }catch (Exception $e) {
     die( $e->getMessage() );
 }
@@ -35,14 +37,22 @@ try{
             </div>
         </header>
         <main class="favorites-container">
-            <h2 id="favoritesHeader">Favorites</h2>
-            <div id="aapl" class="favoritesListing">
-                <img class="favorites favoritesIcon" alt="Apple" src="images/AAPL.svg">
-                <div class="favorites" id="favoritesSymbol">AAPL</div>
-                <div class="favorites" id="favoritesName">Apple</div>
-                <button class="favorites button" id="removeFavorite">Remove</button>
-            </div>
-            <div id="amd" class="favoritesListing">
+        <h2 id="favoritesHeader">Favorites</h2>
+            <?php 
+            foreach ($fav as $favorite) {
+                ?>
+                    <div id="<?=$favorite["symbol"]?>" class="favoritesListing">
+                    <img class="favorites favoritesIcon" alt="<?=$favorite["symbol"]?>" src="images/logos/<?=$favorite["symbol"]?>.svg">
+                    <div class="favorites" id="favoritesSymbol"><?=$favorite["symbol"]?></div>
+                    <div class="favorites" id="favoritesName">Name Here</div>
+                    <button class="favorites button" id="removeFavorite">Remove</button>
+                    </div>
+                <?php
+            }
+            ?>
+            
+            
+            <!-- <div id="amd" class="favoritesListing">
                 <img class="favorites favoritesIcon" alt="AMD" src="images/AMD.svg">
                 <div class="favorites" id="favoritesSymbol">AMD</div>
                 <div class="favorites" id="favoritesName">AMD</div>
@@ -59,7 +69,7 @@ try{
                 <div class="favorites" id="favoritesSymbol">MSFT</div>
                 <div class="favorites" id="favoritesName">Microsoft</div>
                 <button class="favorites button" id="removeFavorite">Remove</button>
-            </div>
+            </div> -->
             <button id="removeAll">Remove All</button>
         </main>
     </body>

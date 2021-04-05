@@ -117,28 +117,13 @@ main.home-container, main.favorites-container {
 }
 
 /* favorites */
-#aapl {
+.favoritesListing {
     grid-column: 1 / span 4;
-    grid-row: 2 / span 1;
-}
-
-#amd {
-    grid-column: 1 / span 4;
-    grid-row: 3 / span 1;
-}
-
-#amzn {
-    grid-column: 1 / span 4;
-    grid-row: 4 / span 1;
-}
-
-#msft {
-    grid-column: 1 / span 4;
-    grid-row: 5 / span 1;
+    grid-row: auto;
 }
 
 #removeAll {
-    grid-row: 6 / span 1;
+    grid-row: auto;
 }
 
 .button, #removeAll {
