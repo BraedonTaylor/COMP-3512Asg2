@@ -3,11 +3,17 @@ require_once ("assign_2.classes.inc.php");
 require_once ("index.inc.php");
 try{
     $conn = DatabaseHelper::createConnection(array(DBCONNSTRING, DBUSER, DBPASS));
+    
     $userGateway = new UserDB($conn);
     $favGateway = new FavoritesDB($conn);
     $userID = 5;
+    if (isset($_POST['removeall'])) {
+        $favGateway->removeAll($userID);
+        $fav = $favGateway->getUserFavorites($userID);
+    } else {
+        $fav = $favGateway->getUserFavorites($userID);
+    }
     $user = $userGateway->getUser($userID);
-    $fav = $favGateway->getUserFavorites($userID);
 }catch (Exception $e) {
     die( $e->getMessage() );
 }
@@ -40,36 +46,17 @@ try{
         <h2 id="favoritesHeader">Favorites</h2>
             <?php 
             foreach ($fav as $favorite) {
+                // var_dump($favorite);
                 ?>
                     <div id="<?=$favorite["symbol"]?>" class="favoritesListing">
                     <img class="favorites favoritesIcon" alt="<?=$favorite["symbol"]?>" src="images/logos/<?=$favorite["symbol"]?>.svg">
                     <div class="favorites" id="favoritesSymbol"><?=$favorite["symbol"]?></div>
-                    <div class="favorites" id="favoritesName">Name Here</div>
+                    <div class="favorites" id="favoritesName"><?=$favorite["name"]?></div>
                     <button class="favorites button" id="removeFavorite">Remove</button>
                     </div>
                 <?php
             }
             ?>
-            
-            
-            <!-- <div id="amd" class="favoritesListing">
-                <img class="favorites favoritesIcon" alt="AMD" src="images/AMD.svg">
-                <div class="favorites" id="favoritesSymbol">AMD</div>
-                <div class="favorites" id="favoritesName">AMD</div>
-                <button class="favorites button" id="removeFavorite">Remove</button>
-            </div>
-            <div id="amzn" class="favoritesListing">
-                <img class="favorites favoritesIcon" alt="Amazon" src="images/AMZN.svg">
-                <div class="favorites" id="favoritesSymbol">AMZN</div>
-                <div class="favorites" id="favoritesName">Amazon</div>
-                <button class="favorites button" id="removeFavorite">Remove</button>
-            </div>
-            <div id="msft" class="favoritesListing">
-                <img class="favorites favoritesIcon" alt="Microsoft" src="images/MSFT.svg">
-                <div class="favorites" id="favoritesSymbol">MSFT</div>
-                <div class="favorites" id="favoritesName">Microsoft</div>
-                <button class="favorites button" id="removeFavorite">Remove</button>
-            </div> -->
             <button id="removeAll">Remove All</button>
         </main>
     </body>

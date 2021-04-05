@@ -47,7 +47,7 @@ class UserDB {
 }
 
 class FavoritesDB {
-    private static $baseSQL = "SELECT favoriteid, userid, symbol FROM favorites";
+    private static $baseSQL = "SELECT favoriteid, favorites.userid, favorites.symbol, companies.name FROM favorites INNER JOIN users ON favorites.userid = users.id INNER JOIN companies ON favorites.symbol = companies.symbol";
     public function __construct($connection){
         $this->pdo = $connection;
     }
@@ -56,5 +56,11 @@ class FavoritesDB {
         $sql = self::$baseSQL . " WHERE userid=?";
         $statement = DatabaseHelper::runQuery($this->pdo, $sql, array($id));
         return $statement->fetchAll();
+    }
+
+    public function removeAll($id) {
+        $sql = "DELETE FROM favorites WHERE userid=?";
+        $statement = DatabaseHelper::runQuery($this->pdo, $sql, NULL);
+        return $statement;
     }
 }

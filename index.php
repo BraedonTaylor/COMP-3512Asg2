@@ -39,12 +39,15 @@ try{
             <h2 id="homeHeader">Stock Browser</h2>
             <div id="aboutBox" class="homeBox">About</div>
             <div id="companiesBox" class="homeBox">Companies</div>
-            <!-- <div id="loginBox" class="homeBox">Login</div>
-            <div id="signupBox" class="homeBox">Sign up</div> -->
-            <div id="portfolioBox" class="homeBox">Portfolio</div>
-            <div id="favoritesBox" class="homeBox">Favorites</div>
-            <div id="profileBox" class="homeBox">Profile</div>
-            <div id="logoutBox" class="homeBox">Logout</div>
+            <?php if (isset($userID)) { ?>
+                <div id="portfolioBox" class="homeBox">Portfolio</div>
+                <div id="favoritesBox" class="homeBox">Favorites</div>
+                <div id="profileBox" class="homeBox">Profile</div>
+                <div id="logoutBox" class="homeBox">Logout</div>
+            <?php } else { ?>
+                <div id="loginBox" class="homeBox">Login</div>
+                <div id="signupBox" class="homeBox">Sign up</div>
+            <?php } ?>
         </main>
     </body>
 </html>
