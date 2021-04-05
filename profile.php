@@ -24,7 +24,7 @@ try{
     <body>
 <!-- Nav bar based off of https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
         <header class="topnav">
-            <img class="logo" alt="logo">
+            <img class="logo" alt="logo" src="images/logo.png">
             <a class="icon"><i class="fa fa-bars"></i></a>
             <div id="navlinks" class="hidden">
                 <a href="index.php">Home</a>
