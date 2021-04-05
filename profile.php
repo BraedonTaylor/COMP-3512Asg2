@@ -1,7 +1,9 @@
 <?php
 require_once ("assign_2.classes.inc.php");
 require_once ("profile.inc.php");
+session_start();
 try{
+//    setting up connection to database and retrieving data for logged-in user
     $conn = DatabaseHelper::createConnection(array(DBCONNSTRING, DBUSER, DBPASS));
     $userGateway = new UserDB($conn);
     $userID = 5;
@@ -20,7 +22,7 @@ try{
         <script src="navbar.js"></script>
     </head>
     <body>
-<!--    My take on the hamburger nav bar. Based off of https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
+<!-- Nav bar based off of https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
         <header class="topnav">
             <img class="logo" alt="logo">
             <a class="icon"><i class="fa fa-bars"></i></a>
@@ -40,6 +42,7 @@ try{
                 <img id="profile" alt="profile picture" src="https://randomuser.me/api/portraits/women/<?= $userID?>.jpg">
             </div>
             <div class="profile">
+                <!-- Creating the profile based on retrieved user data -->
                 <strong>Name: </strong><span><?= $user["firstname"] . " " . $user["lastname"]?></span>
                 <strong>Email: </strong><span><?= $user["email"]?></span>
                 <strong>City: </strong><span><?= $user["city"]?></span>

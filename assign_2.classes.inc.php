@@ -15,7 +15,7 @@ class DatabaseHelper {
     the passed array of parameters (null if none)
     */
     public static function runQuery($connection, $sql, $parameters = array()) {
-        // Ensure parameters are in an array
+        // Ensure parameters are in an array, unless parameters = null
         if (!is_array($parameters) && $parameters != null) {
             $parameters = array($parameters);
         }
