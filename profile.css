@@ -78,6 +78,12 @@ img#profile{
     border-width: thick;
     box-shadow: 8px 8px 20px #1a8fc5;
 }
+
+.logo {
+    vertical-align: middle;
+    height: 20px;
+}
+
 @media screen and (max-width: 500px){
 /*    styling for hamburger nav based off of https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
     .topnav a, .topnav .logo {
