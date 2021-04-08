@@ -60,7 +60,14 @@ class FavoritesDB {
 
     public function removeAll($id) {
         $sql = "DELETE FROM favorites WHERE userid=?";
-        $statement = DatabaseHelper::runQuery($this->pdo, $sql, NULL);
+        $statement = DatabaseHelper::runQuery($this->pdo, $sql, array($id));
+        return $statement;
+    }
+
+    public function removeSingle($id, $symbol) {
+        $sql = "DELETE FROM favorites WHERE userid=? AND symbol=?";
+        $statement = DatabaseHelper::runQuery($this->pdo, $sql, array($id, $symbol));
         return $statement;
     }
 }
+
