@@ -18,7 +18,7 @@ try{
         <meta charset="utf-8">
         <title>Profile</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="profile.css">
+        <link rel="stylesheet" href="css/style.css">
         <script src="navbar.js"></script>
     </head>
     <body>
@@ -37,7 +37,7 @@ try{
             </div>
         </header>
         <main class="profile-container">
-            <h2>PROFILE</h2>
+            <h2 id="profile-head">PROFILE</h2>
             <div class="img">
                 <img id="profile" alt="profile picture" src="https://randomuser.me/api/portraits/women/<?= $userID?>.jpg">
             </div>
