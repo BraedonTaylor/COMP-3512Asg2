@@ -62,12 +62,12 @@ foreach ($fav as $favorite) {
                 // var_dump($favorite);
                 ?>
                     <div id="<?=$favorite["symbol"]?>" class="favoritesListing">
-                    <img class="favorites favoritesIcon" alt="<?=$favorite["symbol"]?>" src="images/logos/<?=$favorite["symbol"]?>.svg">
-                    <div class="favorites" id="favoritesSymbol"><?=$favorite["symbol"]?></div>
-                    <div class="favorites" id="favoritesName"><?=$favorite["name"]?></div>
-                    <form method="post">
-                        <button class="favorites button" id="removeFavorite <?=$rvString?>" name="<?=$rvString?>" value="<?=$rvString?>" type="submit">Remove</button>
-                    </form>
+                        <img class="favorites favoritesIcon" alt="<?=$favorite["symbol"]?>" src="images/logos/<?=$favorite["symbol"]?>.svg">
+                        <div class="favorites favoritesSymbol"><?=$favorite["symbol"]?></div>
+                        <div class="favorites favoritesName"><?=$favorite["name"]?></div>
+                        <form method="post">
+                            <button class="favorites button" id="removeFavorite <?=$rvString?>" name="<?=$rvString?>" value="<?=$rvString?>" type="submit">Remove</button>
+                        </form>
                     </div>
                 <?php
             }
