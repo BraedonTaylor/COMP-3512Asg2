@@ -45,3 +45,22 @@ class UserDB {
         return $statement->fetch(PDO::FETCH_ASSOC);
     }
 }
+class CompanyDB {
+    private static $baseSQL = "SELECT symbol, name, sector FROM companies";
+
+    public function __construct($connection) {
+        $this->pdo = $connection;
+    }
+
+    public function getAll() {
+        $sql = self::$baseSQL;
+        $statement = DatabaseHelper::runQuery($this->pdo, $sql, null);
+        return $statement->fetchAll();
+    }
+
+    public function getAllForSymbol($symbol) {
+        $sql = self::$baseSQL . " WHERE Companies.Symbol=?";
+        $statement = DatabaseHelper::runQuery($this->pdo, $sql, Array($symbol));
+        return $statement->fetchAll();
+    }
+}
