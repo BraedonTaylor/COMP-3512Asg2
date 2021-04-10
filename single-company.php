@@ -61,18 +61,18 @@ try{
         <div class="heading">
             <img class="company-logo" src="images/logos/<?= $company["symbol"]?>.svg" alt="Logo for <?= $company["name"]?>">
             <h2><?= $company["name"]?>    ("<?= $company["symbol"]?>")</h2>
+            <form method="post" id="company-btns">
+                <button class="button" id="addFav" name="addFav" value="addFav" type="submit">Add to Favorites</button>
+                <button class="button" id="history" name="history" value="History" type="submit">History</button>
+            </form>
         </div>
-        <div class="info-columns">
-            <div id="single-wide"><?= $company["description"]?> <a href="<?= $company["website"]?>"><?= $company["website"]?></a></div>
-            <span><strong>Sector: </strong><?= $company["sector"]?></span>
-            <span><strong>Sub-Industry: </strong><?= $company["subindustry"]?></span>
-            <span><strong>Exchange: </strong><?= $company["exchange"]?></span>
-            <span><strong>Address: </strong><?= $company["address"]?></span>
+        <div class="company-style"><?= $company["description"]?> <a href="<?= $company["website"]?>"><?= $company["website"]?></a></div>
+        <div id="info-columns" class="company-style">
+            <strong>Sector: </strong><span><?= $company["sector"]?></span>
+            <strong>Exchange: </strong><span><?= $company["exchange"]?></span>
+            <strong class="company-sub">Sub-Industry: </strong><span class="company-sub"><?= $company["subindustry"]?></span>
+            <strong>Address: </strong><span><?= $company["address"]?></span>
         </div>
-        <form method="post" id="company-btns">
-            <button class="button" id="addFav" name="addFav" value="addFav" type="submit">Add to Favorites</button>
-            <button class="button" id="history" name="history" value="History" type="submit">History</button>
-        </form>
     </main>
     </body>
 </html>

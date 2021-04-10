@@ -65,17 +65,13 @@ div.profile{
     grid-template-columns: 100px auto;
     border-radius: 5px;
 }
-div.profile strong, div.profile span{
+div strong, div span{
     font-family: "roboto";
     border-bottom: thin solid #1a8fc5;
     padding: 15px;
     font-size: 17px;
 }
-.info-columns span{
-    font-family: "roboto";
-    border-bottom: thin solid #1a8fc5;
-    padding: 15px;
-}
+div strong{margin-left: 10px;}
 div.img{
     grid-column: 1;
     grid-row: 2;
@@ -97,25 +93,35 @@ div.heading{
     padding: 10px;
     text-align: center;
 }
-div.info-columns{
+.company-style{
+    background-color: #94b5c0;
     font-size: 17px;
     margin-top: 20px;
     padding: 20px;
+    border-radius: 10px;
+}
+#info-columns{
     display: grid;
-    grid-gap: 5px;
-    background-color: #94b5c0;
     width: auto;
     grid-template-columns: repeat(4, auto);
     grid-template-rows: repeat(2, 50%);
-    border-radius: 10px;
 }
-div#single-wide{grid-column: span 4;}
 .company-logo{width: 400px;}
 .logo {
     vertical-align: middle;
     height: 20px;
 }
-
+.button, #removeAll {
+    background-color: #4a7edd; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 12px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
 @media screen and (max-width: 500px){
 /*    styling for hamburger nav based off of https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
     .topnav a, .topnav .logo {
@@ -141,11 +147,13 @@ div#single-wide{grid-column: span 4;}
         width: auto;
     }
     div.heading{text-align: left;}
-    div.info-columns{
-        grid-template-columns: auto;
-        grid-template-rows: repeat(5, auto);
+    div#info-columns{
+        grid-template-columns: 140px auto;
+        grid-template-rows: repeat(4, auto);
+        grid-row-gap: 5px;
     }
-    div#single-wide{grid-column: span 1;}
+    .company-sub{grid-row: 2;}
+    div strong{margin: 0;}
     .company-logo{width: 80%; min-width: 250px;}
     h2{text-align: left;}
 }
