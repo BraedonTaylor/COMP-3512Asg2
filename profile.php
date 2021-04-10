@@ -31,7 +31,7 @@ try{
                 <a href="about.html">About</a>
                 <a href="list.php">Companies</a>
                 <a class="login" href="portfolio.php">Portfolio</a>
-                <a class="login active" href="profile.php">Profile</a>
+                <a class="login active" href="profile.php">Profile</a><!-- active class used to tell user which page they are on-->
                 <a class="login" href="favourites.php">Favourites</a>
                 <a class="login" href="">Log Out</a>
             </div>
