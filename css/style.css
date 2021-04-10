@@ -142,10 +142,10 @@ div#single-wide{grid-column: span 4;}
     }
     div.heading{text-align: left;}
     div.info-columns{
-        grid-template-columns: 90%;
+        grid-template-columns: auto;
         grid-template-rows: repeat(5, auto);
     }
     div#single-wide{grid-column: span 1;}
-    .company-logo{width: 80%; min-width: 200px;}
+    .company-logo{width: 80%; min-width: 250px;}
     h2{text-align: left;}
 }
