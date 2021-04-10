@@ -3,14 +3,30 @@ require_once ("assign_2.classes.inc.php");
 require_once ("profile.inc.php");
 session_start();
 try{
-//    setting up connection to database and retrieving data for user favorites if exists
+//    setting up connection to database and retrieving data for company identified in query string
     $conn = DatabaseHelper::createConnection(array(DBCONNSTRING, DBUSER, DBPASS));
     $favoritesGateway = new FavoritesDB($conn);
     $companyGateway = new CompanyDB($conn);
+    //these two if statements are just for ease of programming. can alter/remove if needed
     if (isset($_GET["symbol"])){
         $symbol = $_GET["symbol"];
     } else {
         $symbol = "A";
+    }
+    if (isset($_SESSION["userid"])){
+        $user = $_SESSION["userid"];
+    } else {
+        $user = 5;
+    }
+    if ($_POST) {//checking to see if server request was via POST
+    if(isset($_POST["addFav"])){
+        unset($_POST["addFav"]);
+        $favoritesGateway->addFavorite($user, $symbol);
+        header("Location: Profile.php");//placeholder for favorites.php, used for testing
+    } elseif(isset($_POST["history"])){
+        unset($_POST["history"]);
+        header("Location: history.php?symbol=$symbol");
+    }
     }
     $company = $companyGateway->getOneForSymbol($symbol);
 }catch (Exception $e) {
@@ -53,6 +69,10 @@ try{
             <span><strong>Exchange: </strong><?= $company["exchange"]?></span>
             <span><strong>Address: </strong><?= $company["address"]?></span>
         </div>
+        <form method="post" id="company-btns">
+            <button class="button" id="addFav" name="addFav" value="addFav" type="submit">Add to Favorites</button>
+            <button class="button" id="history" name="history" value="History" type="submit">History</button>
+        </form>
     </main>
     </body>
 </html>

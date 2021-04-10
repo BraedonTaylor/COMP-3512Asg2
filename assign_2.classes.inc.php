@@ -32,6 +32,11 @@ class DatabaseHelper {
         }
         return $statement;
     }
+    public static function execQuery($connection, $sql){
+            $connection->beginTransaction();
+            $connection->exec($sql);
+            $connection->commit();
+    }
 }
 class UserDB {
     private static $baseSQL = "SELECT id, firstname, lastname, city, country, email FROM users";
@@ -91,5 +96,9 @@ class FavoritesDB {
         $sql = "DELETE FROM favorites WHERE userid=? AND symbol=?";
         $statement = DatabaseHelper::runQuery($this->pdo, $sql, array($id, $symbol));
         return $statement;
+    }
+    public function addFavorite($userID, $symbol){
+        $sql = "INSERT INTO favorites (userid, symbol) VALUES ($userID,'".$symbol."')";
+        DatabaseHelper::execQuery($this->pdo, $sql);
     }
 }
