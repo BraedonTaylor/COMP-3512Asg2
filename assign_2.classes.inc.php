@@ -44,6 +44,7 @@ class UserDB {
         $statement = DatabaseHelper::runQuery($this->pdo, $sql, array($id));
         return $statement->fetch(PDO::FETCH_ASSOC);
     }
+
 }
 class CompanyDB {
     private static $baseSQL = "SELECT symbol, name, sector, subindustry, address, exchange, website, description FROM companies";
@@ -51,7 +52,7 @@ class CompanyDB {
     public function __construct($connection) {
         $this->pdo = $connection;
     }
-
+  
     public function getAll() {
         $sql = self::$baseSQL;
         $statement = DatabaseHelper::runQuery($this->pdo, $sql, null);
@@ -63,6 +64,33 @@ class CompanyDB {
         $statement = DatabaseHelper::runQuery($this->pdo, $sql, Array($symbol));
         return $statement->fetchAll();
     }
+}
+
+class HistoryDB {
+    private static $baseSQL = "SELECT date, open, high, low, close, volume FROM history";
+    
+    public function __construct($connection) {
+        $this->pdo = $connection;
+    }
+    
+    public function getAll() {
+        $sql = self::$baseSQL;
+        $statement = DatabaseHelper::runQuery($this->pdo, $sql, null);
+        return $statement->fetchAll();
+    }
+    
+    public function getAllForSymbol($symbol) {
+        $sql = self::$baseSQL . " WHERE history.symbol=? ORDER BY date";
+        $statement = DatabaseHelper::runQuery($this->pdo, $sql, Array($symbol));
+        return $statement->fetchAll();
+    }
+    
+    public function getAllForSymbolSort($symbol, $sortParam) {
+        $sql = self::$baseSQL . " WHERE history.symbol=? ORDER BY {$sortParam}";
+        $statement = DatabaseHelper::runQuery($this->pdo, $sql, Array($symbol));
+        return $statement->fetchAll();
+    }
+  
     public function getOneForSymbol($symbol){
         $sql = self::$baseSQL . " WHERE symbol=? LIMIT 1";
         $statement = DatabaseHelper::runQuery($this->pdo, $sql, Array($symbol));
