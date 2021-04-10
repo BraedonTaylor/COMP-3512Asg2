@@ -148,6 +148,7 @@ main.home-container, main.favorites-container {
 
 .favoritesIcon, .favoritesSymbol, .favoritesName  { 
     width:20%;
+    margin: 10px;
     text-align: center;
 }
 
