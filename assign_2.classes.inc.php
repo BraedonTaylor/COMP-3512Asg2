@@ -15,7 +15,7 @@ class DatabaseHelper {
     the passed array of parameters (null if none)
     */
     public static function runQuery($connection, $sql, $parameters = array()) {
-        // Ensure parameters are in an array
+        // Ensure parameters are in an array, unless parameters = null
         if (!is_array($parameters) && $parameters != null) {
             $parameters = array($parameters);
         }
@@ -42,7 +42,31 @@ class UserDB {
     public function getUser($id){
         $sql = self::$baseSQL . " WHERE id=?";
         $statement = DatabaseHelper::runQuery($this->pdo, $sql, array($id));
-        return $statement->fetch();
+        return $statement->fetch(PDO::FETCH_ASSOC);
+    }
+}
+class CompanyDB {
+    private static $baseSQL = "SELECT symbol, name, sector, subindustry, address, exchange, website, description FROM companies";
+
+    public function __construct($connection) {
+        $this->pdo = $connection;
+    }
+
+    public function getAll() {
+        $sql = self::$baseSQL;
+        $statement = DatabaseHelper::runQuery($this->pdo, $sql, null);
+        return $statement->fetchAll();
+    }
+
+    public function getAllForSymbol($symbol) {
+        $sql = self::$baseSQL . " WHERE Companies.Symbol=?";
+        $statement = DatabaseHelper::runQuery($this->pdo, $sql, Array($symbol));
+        return $statement->fetchAll();
+    }
+    public function getOneForSymbol($symbol){
+        $sql = self::$baseSQL . " WHERE symbol=? LIMIT 1";
+        $statement = DatabaseHelper::runQuery($this->pdo, $sql, Array($symbol));
+        return $statement->fetch(PDO::FETCH_ASSOC);
     }
 }
 
@@ -69,5 +93,9 @@ class FavoritesDB {
         $statement = DatabaseHelper::runQuery($this->pdo, $sql, array($id, $symbol));
         return $statement;
     }
+  
+    public function addFavorite($userID, $symbol){
+        $sql = "INSERT INTO favorites(userid, symbol) VALUES (?, ?)";
+        DatabaseHelper::runQuery($this->pdo, $sql, array($userID, $symbol));
+    }
 }
-
