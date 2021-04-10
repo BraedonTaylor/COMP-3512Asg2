@@ -6,9 +6,12 @@ try{
 //    setting up connection to database and retrieving data for user favorites if exists
     $conn = DatabaseHelper::createConnection(array(DBCONNSTRING, DBUSER, DBPASS));
     $favoritesGateway = new FavoritesDB($conn);
-    $favoritesGateway->createTable();
     $companyGateway = new CompanyDB($conn);
-    $symbol = "A";
+    if (isset($_GET["symbol"])){
+        $symbol = $_GET["symbol"];
+    } else {
+        $symbol = "A";
+    }
     $company = $companyGateway->getOneForSymbol($symbol);
 }catch (Exception $e) {
     die( $e->getMessage() );
@@ -21,7 +24,7 @@ try{
         <title><?= $company["name"] ?></title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/style.css">
-        <script src="navbar.js"></script>
+        <script src="js/navbar.js"></script>
     </head>
     <body>
 <!-- Nav bar based off of https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->

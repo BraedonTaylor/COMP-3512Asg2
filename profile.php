@@ -19,7 +19,7 @@ try{
         <title>Profile</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/style.css">
-        <script src="navbar.js"></script>
+        <script src="js/navbar.js"></script>
     </head>
     <body>
 <!-- Nav bar based off of https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
