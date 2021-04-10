@@ -12,8 +12,8 @@ try{
     } else {
         $symbol = "A";
     }
-    if (isset($_SESSION["userid"])){
-        $user = $_SESSION["userid"];//checking to see if user is logged in; can alter if needed
+    if (isset($_SESSION["userID"]) && $_SESSION["userID"] != null){
+        $user = $_SESSION["userID"];//checking to see if user is logged in; can alter if needed
     } else {
         $user = 5;
     }

@@ -3,10 +3,15 @@ require_once ("assign_2.classes.inc.php");
 require_once ("profile.inc.php");
 session_start();
 try{
-//    setting up connection to database and retrieving data for logged-in user
+//    checking if user is logged in
+    if (isset($_SESSION["userID"]) && $_SESSION["userID"] != null){
+        $userID = $_SESSION["userID"];//checking to see if user is logged in; can alter if needed
+    } else {
+        $userID = 5;
+    }
+    //    setting up connection to database and retrieving data for logged-in user
     $conn = DatabaseHelper::createConnection(array(DBCONNSTRING, DBUSER, DBPASS));
     $userGateway = new UserDB($conn);
-    $userID = 5;
     $user = $userGateway->getUser($userID);
 }catch (Exception $e) {
     die( $e->getMessage() );
