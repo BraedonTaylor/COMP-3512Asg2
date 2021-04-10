@@ -101,6 +101,7 @@ div.heading{
     border-radius: 10px;
 }
 #info-columns{
+    padding-top: 30px;
     display: grid;
     width: auto;
     grid-template-columns: repeat(4, auto);
