@@ -69,6 +69,7 @@ class CompanyDB {
         return $statement->fetch(PDO::FETCH_ASSOC);
     }
 }
+
 class FavoritesDB {
     private static $baseSQL = "SELECT favoriteid, favorites.userid, favorites.symbol, companies.name FROM favorites INNER JOIN users ON favorites.userid = users.id INNER JOIN companies ON favorites.symbol = companies.symbol";
     public function __construct($connection){
@@ -92,6 +93,7 @@ class FavoritesDB {
         $statement = DatabaseHelper::runQuery($this->pdo, $sql, array($id, $symbol));
         return $statement;
     }
+  
     public function addFavorite($userID, $symbol){
         $sql = "INSERT INTO favorites(userid, symbol) VALUES (?, ?)";
         DatabaseHelper::runQuery($this->pdo, $sql, array($userID, $symbol));
