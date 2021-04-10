@@ -27,6 +27,8 @@ body {
     background-color: #5f939a;
     color: #e6e6e6;
 }
+a{color: #1e6f5c;}
+a:hover{color: #5f939a;}
 .topnav .active{
     background-color: #1e6f5c;
     color: white;
@@ -73,7 +75,6 @@ div.profile strong, div.profile span{
     font-family: "roboto";
     border-bottom: thin solid #1a8fc5;
     padding: 15px;
-    font-size: 17px;
 }
 div.img{
     grid-column: 1;
@@ -86,7 +87,6 @@ img#profile{
     border-width: thick;
     box-shadow: 8px 8px 20px #1a8fc5;
 }
-
 main#single-container {
     color: #1e6f5c;
     margin: 20px;
@@ -98,6 +98,7 @@ div.heading{
     text-align: center;
 }
 div.info-columns{
+    font-size: 17px;
     margin-top: 20px;
     padding: 20px;
     display: grid;
@@ -133,12 +134,18 @@ div#single-wide{grid-column: span 4;}
     main.profile-container {
         grid-template-columns: auto;
     }
-
     div.profile{
         grid-row: 3;
         grid-column: 1;
         grid-template-columns: 90px auto;
         width: auto;
     }
+    div.heading{text-align: left;}
+    div.info-columns{
+        grid-template-columns: 90%;
+        grid-template-rows: repeat(5, auto);
+    }
+    div#single-wide{grid-column: span 1;}
+    .company-logo{width: 80%; min-width: 200px;}
     h2{text-align: left;}
 }
