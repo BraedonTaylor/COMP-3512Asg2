@@ -20,26 +20,30 @@ body {
 .topnav a.icon{
     display: none;
     background-color: #1e6f5c;
-    color: white;
+    color: #e6e6e6;
     border-radius: 7.5px;
 }
 .topnav a:hover{
     background-color: #5f939a;
-    color: #e6e6e6;
+    color: white;
 }
+a{color: #1e6f5c;}
+a:hover{color: #5f939a;}
 .topnav .active{
     background-color: #1e6f5c;
     color: white;
 }
-h2{
+#profile-head{
     font-family: "roboto";
     grid-column: span 2;
     text-align: center;
-    text-shadow: 2px 2px #9ede73;
-    font-weight: bold;
     background-color: #94b5c0;
     border-radius: 5px;
     padding: 20px;
+}
+h2{
+    text-shadow: 2px 2px #9ede73;
+    font-weight: bold;
 }
 main.profile-container{
     color: #1e6f5c;
@@ -61,12 +65,13 @@ div.profile{
     grid-template-columns: 100px auto;
     border-radius: 5px;
 }
-.profile strong, .profile span{
+div strong, div span{
     font-family: "roboto";
     border-bottom: thin solid #1a8fc5;
-    padding: 15px;
+    padding: 15px 5px;
     font-size: 17px;
 }
+div strong{margin-left: 10px;}
 div.img{
     grid-column: 1;
     grid-row: 2;
@@ -78,12 +83,53 @@ img#profile{
     border-width: thick;
     box-shadow: 8px 8px 20px #1a8fc5;
 }
-
+main#single-container {
+    color: #1e6f5c;
+    margin: 20px;
+}
+div.heading{
+    background-color: #94b5c0;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+.company-style{
+    background-color: #94b5c0;
+    font-size: 17px;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+#info-columns{
+    padding-top: 30px;
+    display: grid;
+    width: auto;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(2, 50%);
+    text-align: left;
+}
+.company-logo{width: 400px;}
 .logo {
     vertical-align: middle;
     height: 20px;
 }
-
+.button, #removeAll {
+    background-color: #1e6f5c; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 12px;
+    margin: 5px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    box-shadow: 2px 2px 5px darkolivegreen;
+}
+.button:hover{
+    cursor: pointer;
+    background-color: #5f939a;
+}
 @media screen and (max-width: 500px){
 /*    styling for hamburger nav based off of https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
     .topnav a, .topnav .logo {
@@ -108,5 +154,15 @@ img#profile{
         grid-template-columns: 90px auto;
         width: auto;
     }
+    div.heading{text-align: left;}
+    div#info-columns{
+        grid-template-columns: 140px auto;
+        grid-template-rows: repeat(4, auto);
+        grid-row-gap: 5px;
+    }
+    /*keeping sub-industry under sector */
+    .company-sub{grid-row: 2;}
+    div strong{margin: 0;}
+    .company-logo{width: 80%; min-width: 250px;}
     h2{text-align: left;}
 }

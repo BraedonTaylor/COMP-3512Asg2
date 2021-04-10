@@ -44,23 +44,21 @@ class UserDB {
         $statement = DatabaseHelper::runQuery($this->pdo, $sql, array($id));
         return $statement->fetch(PDO::FETCH_ASSOC);
     }
-    
-    
-}
 
+}
 class CompanyDB {
-    private static $baseSQL = "SELECT symbol, name, sector FROM companies";
-    
+    private static $baseSQL = "SELECT symbol, name, sector, subindustry, address, exchange, website, description FROM companies";
+
     public function __construct($connection) {
         $this->pdo = $connection;
     }
-    
+  
     public function getAll() {
         $sql = self::$baseSQL;
         $statement = DatabaseHelper::runQuery($this->pdo, $sql, null);
         return $statement->fetchAll();
     }
-    
+
     public function getAllForSymbol($symbol) {
         $sql = self::$baseSQL . " WHERE Companies.Symbol=?";
         $statement = DatabaseHelper::runQuery($this->pdo, $sql, Array($symbol));
@@ -91,5 +89,41 @@ class HistoryDB {
         $sql = self::$baseSQL . " WHERE history.symbol=? ORDER BY {$sortParam}";
         $statement = DatabaseHelper::runQuery($this->pdo, $sql, Array($symbol));
         return $statement->fetchAll();
+    }
+  
+    public function getOneForSymbol($symbol){
+        $sql = self::$baseSQL . " WHERE symbol=? LIMIT 1";
+        $statement = DatabaseHelper::runQuery($this->pdo, $sql, Array($symbol));
+        return $statement->fetch(PDO::FETCH_ASSOC);
+    }
+}
+
+class FavoritesDB {
+    private static $baseSQL = "SELECT favoriteid, favorites.userid, favorites.symbol, companies.name FROM favorites INNER JOIN users ON favorites.userid = users.id INNER JOIN companies ON favorites.symbol = companies.symbol";
+    public function __construct($connection){
+        $this->pdo = $connection;
+    }
+
+    public function getUserFavorites($id) {
+        $sql = self::$baseSQL . " WHERE userid=?";
+        $statement = DatabaseHelper::runQuery($this->pdo, $sql, array($id));
+        return $statement->fetchAll();
+    }
+
+    public function removeAll($id) {
+        $sql = "DELETE FROM favorites WHERE userid=?";
+        $statement = DatabaseHelper::runQuery($this->pdo, $sql, array($id));
+        return $statement;
+    }
+
+    public function removeSingle($id, $symbol) {
+        $sql = "DELETE FROM favorites WHERE userid=? AND symbol=?";
+        $statement = DatabaseHelper::runQuery($this->pdo, $sql, array($id, $symbol));
+        return $statement;
+    }
+  
+    public function addFavorite($userID, $symbol){
+        $sql = "INSERT INTO favorites(userid, symbol) VALUES (?, ?)";
+        DatabaseHelper::runQuery($this->pdo, $sql, array($userID, $symbol));
     }
 }
