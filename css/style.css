@@ -1,0 +1,168 @@
+body {
+    background-color: #dbf6e9;
+}
+.topnav {
+    margin: 20px 20px;
+    overflow: hidden;
+    background-color: #94b5c0;
+    position: relative;
+    border-radius: 10px;
+}
+#navlinks{font-family: "roboto";}
+.topnav a, .topnav .logo {
+    float: left;
+    color: #1e6f5c;
+    padding: 14px 30px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+.topnav a.icon{
+    display: none;
+    background-color: #1e6f5c;
+    color: #e6e6e6;
+    border-radius: 7.5px;
+}
+.topnav a:hover{
+    background-color: #5f939a;
+    color: white;
+}
+a{color: #1e6f5c;}
+a:hover{color: #5f939a;}
+.topnav .active{
+    background-color: #1e6f5c;
+    color: white;
+}
+#profile-head{
+    font-family: "roboto";
+    grid-column: span 2;
+    text-align: center;
+    background-color: #94b5c0;
+    border-radius: 5px;
+    padding: 20px;
+}
+h2{
+    text-shadow: 2px 2px #9ede73;
+    font-weight: bold;
+}
+main.profile-container{
+    color: #1e6f5c;
+    margin: 20px;
+    padding: 20px;
+    display: grid;
+    width: auto;
+    grid-gap: 10px;
+    grid-template-columns: 250px auto;
+    grid-template-rows: auto 250px;
+}
+div.profile{
+    grid-column: 2;
+    grid-row: 2;
+    background-color: #94b5c0;
+    padding: 15px;
+    width: auto;
+    display: grid;
+    grid-template-columns: 100px auto;
+    border-radius: 5px;
+}
+div strong, div span{
+    font-family: "roboto";
+    border-bottom: thin solid #1a8fc5;
+    padding: 15px 5px;
+    font-size: 17px;
+}
+div strong{margin-left: 10px;}
+div.img{
+    grid-column: 1;
+    grid-row: 2;
+}
+img#profile{
+    width: 200px;
+    border-style: outset;
+    border-color: #5f939a;
+    border-width: thick;
+    box-shadow: 8px 8px 20px #1a8fc5;
+}
+main#single-container {
+    color: #1e6f5c;
+    margin: 20px;
+}
+div.heading{
+    background-color: #94b5c0;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+.company-style{
+    background-color: #94b5c0;
+    font-size: 17px;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+#info-columns{
+    padding-top: 30px;
+    display: grid;
+    width: auto;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(2, 50%);
+    text-align: left;
+}
+.company-logo{width: 400px;}
+.logo {
+    vertical-align: middle;
+    height: 20px;
+}
+.button, #removeAll {
+    background-color: #1e6f5c; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 12px;
+    margin: 5px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    box-shadow: 2px 2px 5px darkolivegreen;
+}
+.button:hover{
+    cursor: pointer;
+    background-color: #5f939a;
+}
+@media screen and (max-width: 500px){
+/*    styling for hamburger nav based off of https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
+    .topnav a, .topnav .logo {
+        float: none;
+    }
+    .topnav a.icon{
+        float: none;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .hidden{
+        display: none !important;
+    }
+    main.profile-container {
+        grid-template-columns: auto;
+    }
+    div.profile{
+        grid-row: 3;
+        grid-column: 1;
+        grid-template-columns: 90px auto;
+        width: auto;
+    }
+    div.heading{text-align: left;}
+    div#info-columns{
+        grid-template-columns: 140px auto;
+        grid-template-rows: repeat(4, auto);
+        grid-row-gap: 5px;
+    }
+    /*keeping sub-industry under sector */
+    .company-sub{grid-row: 2;}
+    div strong{margin: 0;}
+    .company-logo{width: 80%; min-width: 250px;}
+    h2{text-align: left;}
+}
