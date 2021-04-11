@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
     */
     function logoMaker(c) {
         const logo = elementMaker('img');
-        logo.setAttribute('src', `./logos/${c.symbol}.svg`);
+        logo.setAttribute('src', `./images/logos/${c.symbol}.svg`);
         logo.setAttribute(`alt`, `${c.name}`);
         logo.setAttribute(`class`, `clogo`)
         return logo;
