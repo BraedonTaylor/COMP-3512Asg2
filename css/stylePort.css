@@ -3,37 +3,16 @@ body {
     font-family: Open Sans, sans-serif;
     font-size: 0.8rem;
 }
-.topnav {
-    margin: 20px 20px;
-    overflow: hidden;
-    background-color: #94b5c0;
-    position: relative;
-    border-radius: 10px;
-}
-#navlinks{font-family: "roboto";}
+/*    styling for hamburger nav based off of https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
 .topnav a, .topnav .logo {
-    float: left;
-    color: #1e6f5c;
-    padding: 14px 30px;
-    text-decoration: none;
-    font-size: 17px;
-    display: block;
+    float: none;
 }
 .topnav a.icon{
-    display: none;
-    background-color: #1e6f5c;
-    color: #e6e6e6;
-    border-radius: 7.5px;
-}
-.topnav a:hover{
-    background-color: #5f939a;
-    color: white;
-}
-a{color: #1e6f5c;}
-a:hover{color: #5f939a;}
-.topnav .active{
-    background-color: #1e6f5c;
-    color: white;
+    float: none;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 a tr{
@@ -131,27 +110,55 @@ th {
 }
 
 
+.logo {
+    vertical-align: middle;
+    height: 20px;
+}
 
 @media screen and (min-width:500px) {
 
+    .topnav {
+        margin: 20px 20px;
+        overflow: hidden;
+        background-color: #94b5c0;
+        position: relative;
+        border-radius: 10px;
+    }
+    #navlinks{font-family: "roboto";}
+    .topnav a, .topnav .logo {
+        float: left;
+        color: #1e6f5c;
+        padding: 14px 30px;
+        text-decoration: none;
+        font-size: 17px;
+        display: block;
+    }
+    .topnav a.icon{
+        display: none;
+        background-color: #1e6f5c;
+        color: #e6e6e6;
+        border-radius: 7.5px;
+    }
+    .topnav a:hover{
+        background-color: #5f939a;
+        color: white;
+    }
+    a{color: #1e6f5c;}
+    a:hover{color: #5f939a;}
+    .topnav .active{
+        background-color: #1e6f5c;
+        color: white;
+    }
     body {
         font-size: 1rem;
     }
 
     .container {
         display: grid;
-        grid-gap: 10px;
         grid-template-columns: 0.5fr 2fr 0.5fr;
         grid-template-rows: 2;
         
     }
-
-    /* #header {
-        grid-column: 1 / span 3;
-        grid-row: 1;
-        height: 6rem;
-        width: 99%;
-    } */
 
     .box {
     color: black;
@@ -179,23 +186,8 @@ th {
         height: 700px;
     }
 
-    /*    styling for hamburger nav based off of https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
-    .topnav a, .topnav .logo {
-        float: none;
-    }
-    .topnav a.icon{
-        float: none;
-        display: block;
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-    .hidden{
-        display: none !important;
-    }
-
-    .topnav {
-        grid-column: 1 / span 3;
-        grid-row: 1;
+    .logo {
+        vertical-align: middle;
+        height: 20px;
     }
 }
