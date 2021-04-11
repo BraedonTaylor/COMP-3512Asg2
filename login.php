@@ -1,4 +1,3 @@
-
 <?php
 require_once ("login.inc.php");
 $host="localhost";
@@ -67,7 +66,7 @@ if (isset($_POST["submit"])) {
                 <h1>Login</h1>
                 <label>Email:</label><input type = "text" name = "username" placeholder="enter email"><br><br>
                 <label>Password:</label><input type = "password" name = "password" placeholder="enter password"><br>
-                <input type = "submit" value = " Login "/>
+                <input type = "submit" value = "Login"/>
                 <hr>
                 <h3>No Account?</h3>
                 <label for="signup"><a href="construction.html"><button>Register</button></a></label><br>
