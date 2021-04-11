@@ -7,21 +7,11 @@ session_start();
 $_SESSION["userID"] = null;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
-    /*
-    if (isset($_SESSION["userID"])) {
-        echo "FUCK";
-        $user = $_SESSION["userID"]; //checking to see if user is logged in; 
-        $result = $portfolioGateway->getPortfolio($_SESSION["userID"]);
-    }*/
-
     //If a username is posted
     if (isset($_POST['username'])) {
         
         $conn = DatabaseHelper::createConnection(array(DBCONNSTRING, DBUSER, DBPASS));
         $loginGateway = new Login($conn);
-        
-        //$statement->bindValue(1, $_POST["username"]);
         
         $result = $loginGateway->verifyLogin($_POST['username']);
 

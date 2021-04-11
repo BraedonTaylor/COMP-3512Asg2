@@ -7,7 +7,7 @@ class DatabaseHelper {
         $password = $values[2];
         $pdo = new PDO($connString,$user,$password);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_ASSOC);
+        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
         return $pdo;
     }
     /*
@@ -156,6 +156,6 @@ class Login{
 
     public function verifyLogin($username){
     $statement = DatabaseHelper::runQuery($this->pdo, self::$baseSQL, $username);
-    return $statement->fetch();
+    return $statement;
     }
 }
