@@ -7,8 +7,8 @@ try{
 //    checking if user is logged in
     if (isset($_SESSION["userID"]) && $_SESSION["userID"] != null){
         $userID = $_SESSION["userID"];//checking to see if user is logged in; can alter if needed
-        $login = true;
-    } else {
+        $login = true;//login variable to pass to buildNav()
+    } else {//used for testing, can be deleted/replaced
         $userID = 5;
         $login = true;
     }
