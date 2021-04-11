@@ -24,7 +24,7 @@ class DatabaseHelper {
             // Use a prepared statement if parameters
             $statement = $connection->prepare($sql);
             $executedOk = $statement->execute($parameters);
-            if (! $executedOk) throw new PDOException;
+            if (!$executedOk) throw new PDOException;
         } else {
             // Execute a normal query
             $statement = $connection->query($sql);
@@ -33,6 +33,7 @@ class DatabaseHelper {
         return $statement;
     }
 }
+
 class UserDB {
     private static $baseSQL = "SELECT id, firstname, lastname, city, country, email FROM users";
     public function __construct($connection){
@@ -48,7 +49,6 @@ class UserDB {
 }
 class CompanyDB {
     private static $baseSQL = "SELECT symbol, name, sector, subindustry, address, exchange, website, description FROM companies";
-
     public function __construct($connection) {
         $this->pdo = $connection;
     }
@@ -100,7 +100,7 @@ class HistoryDB {
 
 class FavoritesDB {
     private static $baseSQL = "SELECT favoriteid, favorites.userid, favorites.symbol, companies.name FROM favorites INNER JOIN users ON favorites.userid = users.id INNER JOIN companies ON favorites.symbol = companies.symbol";
-    public function __construct($connection){
+    public function __construct($connection) {
         $this->pdo = $connection;
     }
 
@@ -121,9 +121,21 @@ class FavoritesDB {
         $statement = DatabaseHelper::runQuery($this->pdo, $sql, array($id, $symbol));
         return $statement;
     }
-  
+
     public function addFavorite($userID, $symbol){
         $sql = "INSERT INTO favorites(userid, symbol) VALUES (?, ?)";
         DatabaseHelper::runQuery($this->pdo, $sql, array($userID, $symbol));
+}
+
+class PortfolioDB {
+    private static $baseSQL = "SELECT portfolio.symbol, portfolio.amount, portfolio.id, portfolio.userId, companies.name, history.close, history.date FROM portfolio, companies, history WHERE portfolio.symbol = companies.symbol AND portfolio.symbol = history.symbol AND history.date = '2019-03-29'";
+    public function __construct($connection) {
+        $this->pdo = $connection;
+    }
+
+    public function getPortfolio($id) {
+        $sql = self::$baseSQL . " AND portfolio.userId = :id";
+        $statement = DatabaseHelper::runQuery($this->pdo, $sql, array($id));
+        return $statement;
     }
 }

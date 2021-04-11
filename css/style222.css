@@ -1,0 +1,187 @@
+body {
+    background-color: #dbf6e9;
+    font-family: Open Sans, sans-serif;
+    font-size: 0.8rem;
+}
+.topnav {
+    margin: 20px 20px;
+    overflow: hidden;
+    background-color: #94b5c0;
+    position: relative;
+    border-radius: 10px;
+}
+#navlinks{font-family: "roboto";}
+.topnav a, .topnav .logo {
+    float: left;
+    color: #1e6f5c;
+    padding: 14px 30px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+.topnav a.icon{
+    display: none;
+    background-color: #1e6f5c;
+    color: #e6e6e6;
+    border-radius: 7.5px;
+}
+.topnav a:hover{
+    background-color: #5f939a;
+    color: white;
+}
+a{color: #1e6f5c;}
+a:hover{color: #5f939a;}
+.topnav .active{
+    background-color: #1e6f5c;
+    color: white;
+}
+
+.box {
+  color: black;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 150%;
+  background-color: #94b5c0;
+}
+
+.b {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    height: 700px;
+}
+
+.b section {
+    display: block;
+    height: 92%;
+}
+
+.buttons {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #87a3bd;
+    color: white;
+    border-radius: 2px;
+}
+
+#companyList {
+    display: none;
+    grid-gap: 1px;
+    grid-template-columns: 140px 160px 50px;
+    font-size: 0.8rem;
+    width: 100%;
+    height: 87%;
+    overflow-y: scroll;
+}
+
+.clogo {
+    max-height: 20px;
+    max-width: 100px;
+}
+
+#magnify {
+    display: none;
+    position: fixed;
+    background-color: #94b5c0;
+    border: 1px solid black;
+    z-index: 2;
+}
+
+#magImage {
+    max-height: 100px;
+    width: 200px;
+    padding: 5px;
+}
+
+@media screen and (min-width:500px) {
+
+    body {
+        margin: 10px;
+        background-color: #dbf6e9;
+        font-family: Open Sans, sans-serif;
+        font-size: 0.8rem;
+    }
+    
+    .container {
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 6rem auto;
+      color: #444;
+    }
+    
+    .box {
+    color: black;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 150%;
+      background-color: #94b5c0;
+    }
+    
+    .b {
+        grid-column: 2 / span 1;
+        grid-row: 2;
+        width: 100%;
+        height: 97%;
+    }
+    
+    .b section {
+        display: block;
+    }
+    
+    .buttons {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #87a3bd;
+        color: white;
+        border-radius: 2px;
+    }
+    
+    #companyList {
+        display: none;
+        grid-gap: 15px;
+        grid-template-columns: 250px 400px 200px;
+        width: 900px;
+        height: 777px;
+        overflow-y: scroll;
+        font-size: 1rem;
+    }
+    
+    #magnify {
+        display: none;
+        position: fixed;
+        background-color: #94b5c0;
+        border: 1px solid black;
+        z-index: 2;
+    }
+    
+    #magImage {
+        max-height: 200px;
+        width: 300px;
+        padding: 5px;
+    }
+
+    .clogo {
+        max-height: 20px;
+        max-width: 140px;
+    }
+
+    /*    styling for hamburger nav based off of https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
+    .topnav a, .topnav .logo {
+        float: none;
+    }
+    .topnav a.icon{
+        float: none;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .hidden{
+        display: none !important;
+    }
+
+    .topnav {
+        grid-column: 1 / span 3;
+        grid-row: 1;
+    }
+
+}
