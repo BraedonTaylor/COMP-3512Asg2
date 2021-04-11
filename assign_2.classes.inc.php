@@ -125,6 +125,7 @@ class FavoritesDB {
     public function addFavorite($userID, $symbol){
         $sql = "INSERT INTO favorites(userid, symbol) VALUES (?, ?)";
         DatabaseHelper::runQuery($this->pdo, $sql, array($userID, $symbol));
+    }
 }
 
 class PortfolioDB {
