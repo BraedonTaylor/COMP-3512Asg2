@@ -11,7 +11,7 @@ try {
         $result = $portfolioGateway->getPortfolio($_SESSION["userID"]);
         //Populate array of stocks
         foreach ($result as $row) {
-            $portfolio = new Stock($row['portfolio.symbol'], $row['companies.name'], $row['portfolio.amount'], $row['history.close']);
+            $portfolio[] = new Stock($row['portfolio.symbol'], $row['companies.name'], $row['portfolio.amount'], $row['history.close']);
         }
     }
 } catch (Exception $e) {
