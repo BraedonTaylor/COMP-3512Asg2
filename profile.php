@@ -1,13 +1,16 @@
 <?php
 require_once ("assign_2.classes.inc.php");
 require_once ("config.inc.php");
+require_once ("assign2.navbar.inc.php");
 session_start();
 try{
 //    checking if user is logged in
     if (isset($_SESSION["userID"]) && $_SESSION["userID"] != null){
         $userID = $_SESSION["userID"];//checking to see if user is logged in; can alter if needed
+        $login = true;
     } else {
         $userID = 5;
+        $login = true;
     }
     //    setting up connection to database and retrieving data for logged-in user
     $conn = DatabaseHelper::createConnection(array(DBCONNSTRING, DBUSER, DBPASS));
@@ -27,20 +30,7 @@ try{
         <script src="js/navbar.js"></script>
     </head>
     <body>
-<!-- Nav bar based off of https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
-        <header class="topnav">
-            <img class="logo" alt="logo" src="images/logo.png">
-            <a class="icon"><i class="fa fa-bars"></i></a>
-            <div id="navlinks" class="hidden">
-                <a href="index.php">Home</a>
-                <a href="about.html">About</a>
-                <a href="list.php">Companies</a>
-                <a class="login" href="portfolio.php">Portfolio</a>
-                <a class="login active" href="profile.php">Profile</a><!-- active class used to tell user which page they are on-->
-                <a class="login" href="favorites.php">Favorites</a>
-                <a class="login" href="logout.php">Log Out</a>
-            </div>
-        </header>
+        <?php buildNav("profile", $login) ?>
         <main class="profile-container">
             <h2 id="profile-head">PROFILE</h2>
             <div class="img">
