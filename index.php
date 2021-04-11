@@ -1,10 +1,12 @@
 <?php
 require_once ("assign_2.classes.inc.php");
-require_once ("index.inc.php");
+require_once ("config.inc.php");
+session_start();
+
 try{
     $conn = DatabaseHelper::createConnection(array(DBCONNSTRING, DBUSER, DBPASS));
     $userGateway = new UserDB($conn);
-    $userID = 5;
+    $userID = $_SESSION['userID'];
     $user = $userGateway->getUser($userID);
 }catch (Exception $e) {
     die( $e->getMessage() );

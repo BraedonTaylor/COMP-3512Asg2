@@ -74,7 +74,7 @@ function tableBuilder($portfolio)
             <?php
             foreach ($portfolio as $stock) {
                 echo '<tr>';
-                echo '<td class="sticky"><img class = "image" src="./logos/' . $stock->symbol . '.svg"></td>';
+                echo '<td class="sticky"><img class = "image" src="images/logos/' . $stock->symbol . '.svg"></td>';
                 echo '<td><a class="stockSymbol" href="single-company.php?symbol=' . $stock->symbol . '">' . $stock->symbol . '</a></td>';
                 echo '<td><a class="stockName" href="single-company.php?symbol=' . $stock->symbol . '">' . $stock->name . '</a></td>';
                 echo '<td>' . number($stock->numShares) . '</td>';

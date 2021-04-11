@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const elementMaker = element => document.createElement(`${element}`);
     const $ = element => document.querySelector(`${element}`);
-    const companiesAPI = 'https://www.randyconnolly.com/funwebdev/3rd/api/stocks/companies.php'; // Needs to be changed to our API
+    const companiesAPI = 'http://localhost/comp-3512asg2/api-companies.php'; // Needs to be changed to our API
     let companies = [];
     const searchBox = $('.search');
     const companyList = $('#companyList');

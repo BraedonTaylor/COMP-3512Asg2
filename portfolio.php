@@ -2,6 +2,8 @@
 require_once("portfolio.inc.php");
 require_once("assign_2.classes.inc.php");
 require_once("config.inc.php");
+session_start();
+
 try {
     $conn = DatabaseHelper::createConnection(array(DBCONNSTRING, DBUSER, DBPASS));
     $portfolioGateway = new PortfolioDB($conn);
@@ -9,9 +11,11 @@ try {
     if (isset($_SESSION["userID"]) && $_SESSION["userID"] != null) {
         $user = $_SESSION["userID"]; //checking to see if user is logged in; 
         $result = $portfolioGateway->getPortfolio($_SESSION["userID"]);
+        
         //Populate array of stocks
+        
         foreach ($result as $row) {
-            $portfolio[] = new Stock($row['portfolio.symbol'], $row['companies.name'], $row['portfolio.amount'], $row['history.close']);
+            $portfolio[] = new Stock($row['symbol'], $row['name'], $row['amount'], $row['close']);
         }
     }
 } catch (Exception $e) {

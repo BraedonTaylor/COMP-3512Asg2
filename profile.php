@@ -1,6 +1,6 @@
 <?php
 require_once ("assign_2.classes.inc.php");
-require_once ("profile.inc.php");
+require_once ("config.inc.php");
 session_start();
 try{
 //    checking if user is logged in

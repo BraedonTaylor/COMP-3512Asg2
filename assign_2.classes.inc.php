@@ -141,18 +141,21 @@ class PortfolioDB {
     }
 
     public function getPortfolio($id) {
-        $sql = self::$baseSQL . " AND portfolio.userId = :id";
-        $statement = DatabaseHelper::runQuery($this->pdo, $sql, array($id));
-        return $statement;
+        $sql = self::$baseSQL . " AND portfolio.userId = ? ORDER BY portfolio.symbol";
+        $statement = DatabaseHelper::runQuery($this->pdo, $sql, $id);
+        return $statement->fetchAll();
     }
 }
 
 class Login{
+    private static $baseSQL = "SELECT id, email, password FROM users WHERE email = ? LIMIT 1";
     
-    $baseSQL = "SELECT id, email, password FROM users WHERE email = ? LIMIT 1";
+     public function __construct($connection) {
+        $this->pdo = $connection;
+    }
 
     public function verifyLogin($username){
-    $statement = DatabaseHelper::runQuery($this->pdo, $sql, $username);
-    return $statement
+    $statement = DatabaseHelper::runQuery($this->pdo, self::$baseSQL, $username);
+    return $statement->fetch();
     }
 }

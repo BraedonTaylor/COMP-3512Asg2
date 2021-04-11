@@ -1,42 +1,48 @@
 <?php
-require_once ("login.inc.php");
-$host="localhost";
-$user="root";  
-$password="";
+require_once ("config.inc.php");
+require_once("assign_2.classes.inc.php");
 $db="users"; //database name
 
 session_start();
-$_SESSION["userID"] = NULL;
+$_SESSION["userID"] = null;
 
-if (isset($_POST["submit"])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-    if (isset($_SESSION["userID"]) && $_SESSION["userID"] != null) {
+    /*
+    if (isset($_SESSION["userID"])) {
+        echo "FUCK";
         $user = $_SESSION["userID"]; //checking to see if user is logged in; 
         $result = $portfolioGateway->getPortfolio($_SESSION["userID"]);
+    }*/
 
-    //declaration statements
+    //If a username is posted
+    if (isset($_POST['username'])) {
+        
+        $conn = DatabaseHelper::createConnection(array(DBCONNSTRING, DBUSER, DBPASS));
+        $loginGateway = new Login($conn);
+        
+        //$statement->bindValue(1, $_POST["username"]);
+        
+        $result = $loginGateway->verifyLogin($_POST['username']);
 
-    $statement->bindValue(1, $_POST["username"]);
-    $loginGateway = new Login($conn);
-    $result = $loginGateway->verifyLogin($username);
-    //if true
-    
-    if(password_verify($_POST['password'], $row['password'])){
-
-        // Compare the posted password with the password hash fetched from db.
-            $value = $row['id'];
-            $_SESSION['userID'] = $value;
-            header("index.php");  // For Braeden, on home page check to see if user is logged in. 0 logged out 1 logged in
+        if (is_array($result)) {   
+            
+            if(password_verify($_POST['password'], $result['password'])){
+                // Compare the posted password with the password hash fetched from db.
+                $value = $result['id'];
+                $_SESSION['userID'] = $value;
+                header("Location: index.php");  // For Braeden, on home page check to see if user is logged in. 0 logged out 1 logged in
         } else {
             echo "Incorrect Password, please try again.";
+    }
+        }
+        else {
+            echo 'No email found.';
         }
     } else {
-        echo 'No email found.';
+        echo "No username";
     }
 }
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -69,10 +75,11 @@ if (isset($_POST["submit"])) {
                 <label>Email:</label><input type = "text" name = "username" placeholder="enter email"><br><br>
                 <label>Password:</label><input type = "password" name = "password" placeholder="enter password"><br>
                 <input type = "submit" value = "Login"/>
+            </form>
                 <hr>
                 <h3>No Account?</h3>
                 <label for="signup"><a href="construction.html"><button>Register</button></a></label><br>
-            </form>   
+               
         </div>
         </main>
     </div>

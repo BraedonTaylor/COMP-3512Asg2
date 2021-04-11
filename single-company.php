@@ -1,6 +1,6 @@
 <?php
 require_once ("assign_2.classes.inc.php");
-require_once ("profile.inc.php");
+require_once ("config.inc.php");
 session_start();
 try{
 //    setting up connection to database and retrieving data for company identified in query string
@@ -22,7 +22,7 @@ try{
             unset($_POST["addFav"]);
             $favoritesGateway = new FavoritesDB($conn);//only creates the gateway if POST check returns true
             $favoritesGateway->addFavorite($user, $symbol);
-            header("Location: Profile.php");//placeholder for favorites.php, used for testing; redirect to page after
+            header("Location: favorites.php");
         }                                           //favorites table in database has updated
         elseif(isset($_POST["history"])){
             unset($_POST["history"]);
@@ -55,7 +55,7 @@ try{
                 <a href="list.php">Companies</a>
                 <a class="login" href="portfolio.php">Portfolio</a>
                 <a class="login" href="profile.php">Profile</a>
-                <a class="login" href="favourites.php">Favourites</a>
+                <a class="login" href="favorites.php">Favorites</a>
                 <a class="login" href="">Log Out</a>
             </div>
         </header>
