@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function (){
     });
 
     document.querySelector('#companiesBox').addEventListener('click', (e) => {
-        window.location.href = "companies.php";
+        window.location.href = "list.php";
     });
 
     document.querySelector('#portfolioBox').addEventListener('click', (e) => {
