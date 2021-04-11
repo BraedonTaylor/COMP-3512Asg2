@@ -64,6 +64,12 @@ class CompanyDB {
         $statement = DatabaseHelper::runQuery($this->pdo, $sql, Array($symbol));
         return $statement->fetchAll();
     }
+
+    public function getOneForSymbol($symbol){
+        $sql = self::$baseSQL . " WHERE symbol=? LIMIT 1";
+        $statement = DatabaseHelper::runQuery($this->pdo, $sql, Array($symbol));
+        return $statement->fetch(PDO::FETCH_ASSOC);
+    }
 }
 
 class HistoryDB {
