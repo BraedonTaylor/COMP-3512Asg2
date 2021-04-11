@@ -21,8 +21,8 @@
             <a href="list.php">Companies</a>
             <a class="login" href="portfolio.php">Portfolio</a>
             <a class="login" href="profile.php">Profile</a>
-            <a class="login" href="favourites.php">Favourites</a>
-            <a class="login" href="">Log Out</a>
+            <a class="login" href="favorites.php">Favourites</a>
+            <a class="login" href="logout.php">Log Out</a>
         </div>
     </header>
     <main class="container">

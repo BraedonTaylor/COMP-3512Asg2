@@ -1,7 +1,9 @@
 <?php
 require_once ("assign_2.classes.inc.php");
 require_once ("config.inc.php");
+require_once ("single-company.inc.php");
 session_start();
+
 try{
 //    setting up connection to database and retrieving data for company identified in query string
     $conn = DatabaseHelper::createConnection(array(DBCONNSTRING, DBUSER, DBPASS));
@@ -12,26 +14,34 @@ try{
     } else {
         $symbol = "A";
     }
-    if (isset($_SESSION["userID"]) && $_SESSION["userID"] != null){
-        $user = $_SESSION["userID"];//checking to see if user is logged in; can alter if needed
-    } else {
-        $user = 5;
+    
+    if ($_SERVER['REQUEST_METHOD'] === "POST") {//checking to see if server request was via POST  
+            if(isset($_POST["addFav"])){
+                if ( !isset($_SESSION['userID']) ) {
+                    echo "<script>alert('Please login before adding to favorites.')</script>";
+                } else {
+                    unset($_POST["addFav"]);
+                    $favoritesGateway = new FavoritesDB($conn);//only creates the gateway if POST check returns true
+                    
+                    //This will check if a company already exists in the favorites and will pop an error if it does.
+                    if( doesFavoriteExist($symbol, $favoritesGateway->getUserFavorites($_SESSION['userID'])) ) {
+                        echo "<script>alert('You already have this company as a favorite.')</script>";
+                    } else {
+                        $favoritesGateway->addFavorite($_SESSION['userID'], $symbol);
+                        header("Location: favorites.php");
+                    }
+                }  //favorites table in database has updated
+                
+            } elseif(isset($_POST["history"])) {
+                unset($_POST["history"]);
+                header("Location: history.php?symbol=$symbol");//redirect to company's history page if the "history" button was clicked
+            } 
     }
-    if ($_SERVER['REQUEST_METHOD'] === "POST") {//checking to see if server request was via POST
-        if(isset($_POST["addFav"])){
-            unset($_POST["addFav"]);
-            $favoritesGateway = new FavoritesDB($conn);//only creates the gateway if POST check returns true
-            $favoritesGateway->addFavorite($user, $symbol);
-            header("Location: favorites.php");
-        }                                           //favorites table in database has updated
-        elseif(isset($_POST["history"])){
-            unset($_POST["history"]);
-            header("Location: history.php?symbol=$symbol");//redirect to company's history page if the "history" button
-        }                                                            //was clicked
-    }
-    $companyGateway = new CompanyDB($conn);//gateway is only created after the POST check to save resources
-    $company = $companyGateway->getOneForSymbol($symbol);
-}catch (Exception $e) {
+                    
+        $companyGateway = new CompanyDB($conn);//gateway is only created after the POST check to save resources
+        $company = $companyGateway->getOneForSymbol($symbol);
+
+} catch (Exception $e) {
     die( $e->getMessage() );
 }
 ?>
@@ -56,7 +66,7 @@ try{
                 <a class="login" href="portfolio.php">Portfolio</a>
                 <a class="login" href="profile.php">Profile</a>
                 <a class="login" href="favorites.php">Favorites</a>
-                <a class="login" href="">Log Out</a>
+                <a class="login" href="logout.php">Log Out</a>
             </div>
         </header>
     <main id="single-container">

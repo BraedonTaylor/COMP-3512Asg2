@@ -2,12 +2,16 @@
 require_once ("assign_2.classes.inc.php");
 require_once ("config.inc.php");
 session_start();
+if( !isset($_SESSION['userID']) ) {
+    $_SESSION['userID'] = null;
+}
 
 try{
     $conn = DatabaseHelper::createConnection(array(DBCONNSTRING, DBUSER, DBPASS));
     $userGateway = new UserDB($conn);
     $userID = $_SESSION['userID'];
     $user = $userGateway->getUser($userID);
+    
 }catch (Exception $e) {
     die( $e->getMessage() );
 }
@@ -34,7 +38,7 @@ try{
                 <a class="login" href="portfolio.php">Portfolio</a>
                 <a class="login" href="profile.php">Profile</a>
                 <a class="login" href="favorites.php">Favorites</a>
-                <a class="login" href="">Log Out</a>
+                <a class="login" href="logout.php">Log Out</a>
             </div>
         </header>
         <main class="home-container">
@@ -48,7 +52,7 @@ try{
                 <div id="logoutBox" class="homeBox">Logout</div>
             <?php } else { ?>
                 <div id="loginBox" class="homeBox">Login</div>
-                <div id="signupBox" class="homeBox">Sign up</div>
+            <div id="signupBox" class="homeBox">Sign up</div>
             <?php } ?>
         </main>
     </body>

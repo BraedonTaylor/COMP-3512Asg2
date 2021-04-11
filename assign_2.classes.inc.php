@@ -156,6 +156,6 @@ class Login{
 
     public function verifyLogin($username){
     $statement = DatabaseHelper::runQuery($this->pdo, self::$baseSQL, $username);
-    return $statement;
+    return $statement->fetch();
     }
 }

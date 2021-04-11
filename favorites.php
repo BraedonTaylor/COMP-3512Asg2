@@ -2,11 +2,15 @@
 require_once ("assign_2.classes.inc.php");
 require_once ("config.inc.php");
 session_start();
+if( !isset($_SESSION['userID']) ) {
+    $_SESSION['userID'] = null;
+}
 try{
     $conn = DatabaseHelper::createConnection(array(DBCONNSTRING, DBUSER, DBPASS));
     
     $userGateway = new UserDB($conn);
     $favGateway = new FavoritesDB($conn);
+    
     $userID = $_SESSION['userID'];
     if (isset($_POST['removeall'])) {
         $favGateway->removeAll($userID);
@@ -52,7 +56,7 @@ foreach ($fav as $favorite) {
                 <a class="login" href="portfolio.php">Portfolio</a>
                 <a class="login" href="profile.php">Profile</a>
                 <a class="login" href="favorites.php">Favorites</a>
-                <a class="login" href="">Log Out</a>
+                <a class="login" href="logout.php">Log Out</a>
             </div>
         </header>
         <main class="favorites-container">
