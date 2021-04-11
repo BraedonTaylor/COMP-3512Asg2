@@ -146,3 +146,13 @@ class PortfolioDB {
         return $statement;
     }
 }
+
+class Login{
+    
+    $baseSQL = "SELECT id, email, password FROM users WHERE email = ? LIMIT 1";
+
+    public function verifyLogin($username){
+    $statement = DatabaseHelper::runQuery($this->pdo, $sql, $username);
+    return $statement
+    }
+}

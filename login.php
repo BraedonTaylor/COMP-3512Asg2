@@ -10,21 +10,20 @@ $_SESSION["userID"] = NULL;
 
 if (isset($_POST["submit"])) {
     
+    if (isset($_SESSION["userID"]) && $_SESSION["userID"] != null) {
+        $user = $_SESSION["userID"]; //checking to see if user is logged in; 
+        $result = $portfolioGateway->getPortfolio($_SESSION["userID"]);
+
     //declaration statements
-    $username = $_POST["username"];
-    $password = $_POST["password"];
 
-    $sql = "SELECT id, email, password FROM users WHERE username = ? LIMIT 1"; //SQL string
     $statement->bindValue(1, $_POST["username"]);
-    $statement = $find->query($sql);
-    $credentials = $statement->fetch(PDO::FETCH_ASSOC); //PDO::FETCH returns the array from table
-
+    $loginGateway = new Login($conn);
+    $result = $loginGateway->verifyLogin($username);
     //if true
-    if ($credentials) { 
-        $hash = $credentials['password'];
+    
+    if(password_verify($_POST['password'], $row['password'])){
 
         // Compare the posted password with the password hash fetched from db.
-        if (password_verify($password, $hash)) {
             $value = $row['id'];
             $_SESSION['userID'] = $value;
             header("index.php");  // For Braeden, on home page check to see if user is logged in. 0 logged out 1 logged in
@@ -35,6 +34,9 @@ if (isset($_POST["submit"])) {
         echo 'No email found.';
     }
 }
+
+
+
 ?>
 
 <!DOCTYPE html>
