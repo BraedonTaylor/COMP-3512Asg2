@@ -12,7 +12,7 @@
 
 <body>
     <main class="container">
-        <!--    Julianna's take on the hamburger nav bar. Based off of https://www.w3schools.com/howto/howto_js_mobile_navbar.asp -->
+        <!-- Nav bar based off of https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
         <header class="topnav">
             <img class="logo" alt="logo" src="images/logo.png">
             <a class="icon"><i class="fa fa-bars"></i></a>
@@ -22,7 +22,7 @@
                 <a href="list.php">Companies</a>
                 <a class="login" href="portfolio.php">Portfolio</a>
                 <a class="login" href="profile.php">Profile</a>
-                <a class="login" href="favorites.php">Favorites</a>
+                <a class="login" href="favourites.php">Favourites</a>
                 <a class="login" href="">Log Out</a>
             </div>
         </header>

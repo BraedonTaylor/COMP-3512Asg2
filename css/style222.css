@@ -3,14 +3,6 @@ body {
     font-family: Open Sans, sans-serif;
     font-size: 0.8rem;
 }
-/* 
-#header {
-    grid-column: 1;
-    grid-row: 1;
-    height: 6rem;
-    width: 375px;
-} */
-
 .topnav {
     margin: 20px 20px;
     overflow: hidden;
@@ -18,11 +10,7 @@ body {
     position: relative;
     border-radius: 10px;
 }
-
-.hidden{
-    display: none !important;
-}
-
+#navlinks{font-family: "roboto";}
 .topnav a, .topnav .logo {
     float: left;
     color: #1e6f5c;
@@ -32,35 +20,35 @@ body {
     display: block;
 }
 .topnav a.icon{
-    float: right;
-    border-radius: inherit;
+    display: none;
+    background-color: #1e6f5c;
+    color: #e6e6e6;
+    border-radius: 7.5px;
 }
 .topnav a:hover{
     background-color: #5f939a;
-    color: #e6e6e6;
-}
-.topnav .active{
-    background-color: #2b004d;
     color: white;
 }
-.topnav {
-    grid-column: 1 / span 3;
-    grid-row: 1;
+a{color: #1e6f5c;}
+a:hover{color: #5f939a;}
+.topnav .active{
+    background-color: #1e6f5c;
+    color: white;
 }
 
 .box {
-  color: #1e6f5c;
+  color: black;
   border-radius: 5px;
   padding: 10px;
   font-size: 150%;
-  background-color: #e5eae0;
+  background-color: #94b5c0;
 }
 
 .b {
     grid-column: 1;
     grid-row: 2;
-    width: 375px;
-    height: 810px;
+    width: 100%;
+    height: 700px;
 }
 
 .b section {
@@ -81,6 +69,7 @@ body {
     grid-template-columns: 140px 160px 50px;
     font-size: 0.8rem;
     width: 100%;
+    height: 87%;
     overflow-y: scroll;
 }
 
@@ -92,8 +81,9 @@ body {
 #magnify {
     display: none;
     position: fixed;
-    background-color: #e5eae0;
+    background-color: #94b5c0;
     border: 1px solid black;
+    z-index: 2;
 }
 
 #magImage {
@@ -102,7 +92,7 @@ body {
     padding: 5px;
 }
 
-@media screen and (min-width:376px) {
+@media screen and (min-width:500px) {
 
     body {
         margin: 10px;
@@ -119,31 +109,23 @@ body {
       color: #444;
     }
     
-    #header {
-        grid-column: 1 / span 3;
-        grid-row: 1;
-        height: 5rem;
-        width: 99%;
-    }
-    
     .box {
-    color: #1e6f5c;
+    color: black;
       border-radius: 5px;
       padding: 10px;
       font-size: 150%;
-      background-color: #e5eae0;
+      background-color: #94b5c0;
     }
     
     .b {
         grid-column: 2 / span 1;
         grid-row: 2;
         width: 100%;
-        height: 100%;
+        height: 97%;
     }
     
     .b section {
         display: block;
-        height: 860px;
     }
     
     .buttons {
@@ -158,7 +140,7 @@ body {
         grid-gap: 15px;
         grid-template-columns: 250px 400px 200px;
         width: 900px;
-        height: 780px;
+        height: 777px;
         overflow-y: scroll;
         font-size: 1rem;
     }
@@ -166,8 +148,9 @@ body {
     #magnify {
         display: none;
         position: fixed;
-        background-color: #e5eae0;
+        background-color: #94b5c0;
         border: 1px solid black;
+        z-index: 2;
     }
     
     #magImage {
@@ -179,6 +162,26 @@ body {
     .clogo {
         max-height: 20px;
         max-width: 140px;
+    }
+
+    /*    styling for hamburger nav based off of https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
+    .topnav a, .topnav .logo {
+        float: none;
+    }
+    .topnav a.icon{
+        float: none;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .hidden{
+        display: none !important;
+    }
+
+    .topnav {
+        grid-column: 1 / span 3;
+        grid-row: 1;
     }
 
 }

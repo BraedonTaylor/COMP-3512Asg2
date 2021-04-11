@@ -1,4 +1,11 @@
 <?php
+define('DBHOST', 'localhost');
+define('DBNAME', 'stocks');
+define('DBUSER', 'root');
+define('DBPASS', '');
+define('DBCONNSTRING', "mysql:host=" . DBHOST . ";dbname=" . DBNAME . ";charset=utf8mb4;");
+
+$portfolio = [];
 
 /*
 * Constructor for stock objects.
@@ -31,7 +38,7 @@ function totalPortfolio($portfolio)
         $total += $s->value;
     }
     $total = currency($total);
-    echo "<p id='totalPort'> Total Value of my portfolio: $$total </p>";
+    echo "<h3 id='totalPort'> Total Value of my portfolio: $$total </h3>";
 }
 
 /*
@@ -83,47 +90,11 @@ function tableBuilder($portfolio)
             }
             ?>
         </table>
+    <?php
+    } else {
+    ?>
+        <h3>Portfolio is currently empty. Please add stocks to view portfolio details.</h3>
 <?php
     }
 }
-
-/*
-* Dummy stock data. Needs to be removed once our Database is up.
-*/
-$portfolio = [];
-$portfolio = [
-    new Stock("AMZN", "Amazon.com Inc.", 25, 1760.19),
-    new Stock("A", "Agilent", 20, 218.32),
-    new Stock("MSFT", "Microsoft Corporation", 1500, 108.82),
-    new Stock("MMM", "3M Corporation", 1500, 108.82),
-    new Stock("GOOGL", "Alphabet Inc.", 40, 1111.39),
-    new Stock("ABT", "Abbot Laboratories", 40, 1111.39),
-    new Stock("AES", "AES Corp.", 40, 1111.39),
-    new Stock("EMN", "Eastman Chemical", 40, 1111.39),
-    new Stock("NKE", "Nike", 40, 1111.39),
-    new Stock("V", "Visa", 80, 1111.39),
-    new Stock("WM", "Waste Management", 200, 1111.39),
-    new Stock("WDC", "Western Digital", 6660, 1111.39)
-];
-
-/*
-* Need to insert correct DB input.
-*/
-
-// try {
-//     $conn = DatabaseHelper::createConnection(array(
-//         DBCONNSTRING,
-//         DBUSER, DBPASS
-//     ));
-//     $artGateway = new PortfolioDB($conn);
-//     $artists = $artGateway->getAll();
-//     if (isset($_GET['id']) && $_GET['id'] > 0) {
-//         $paintGateway = new PaintingDB($conn);
-//         $paintings = $paintGateway->getAllForArtist($_GET['id']);
-//     } else {
-//         $paintings = null;
-//     }
-// } catch (Exception $e) {
-//     die($e->getMessage());
-// }
 ?>
