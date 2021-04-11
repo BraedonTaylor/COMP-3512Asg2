@@ -96,12 +96,6 @@ class HistoryDB {
         $statement = DatabaseHelper::runQuery($this->pdo, $sql, Array($symbol));
         return $statement->fetchAll();
     }
-  
-    public function getOneForSymbol($symbol){
-        $sql = self::$baseSQL . " WHERE symbol=? LIMIT 1";
-        $statement = DatabaseHelper::runQuery($this->pdo, $sql, Array($symbol));
-        return $statement->fetch(PDO::FETCH_ASSOC);
-    }
 }
 
 class FavoritesDB {
@@ -127,10 +121,20 @@ class FavoritesDB {
         $statement = DatabaseHelper::runQuery($this->pdo, $sql, array($id, $symbol));
         return $statement;
     }
-
+    private function checkForDuplicate($parameters){
+        $exists = false;
+        $sql = "SELECT * FROM favorites WHERE userid=? AND symbol=?";
+        $statement = DatabaseHelper::runQuery($this->pdo, $sql, $parameters);
+        $results = $statement->fetch(PDO::FETCH_ASSOC);
+        if ($results["userid"] != null) $exists = true;
+        return $exists;
+    }
     public function addFavorite($userID, $symbol){
-        $sql = "INSERT INTO favorites(userid, symbol) VALUES (?, ?)";
-        DatabaseHelper::runQuery($this->pdo, $sql, array($userID, $symbol));
+        $exists = $this->checkForDuplicate(array($userID, $symbol));
+        if ($exists === false) {
+            $sql = "INSERT INTO favorites(userid, symbol) VALUES (?, ?) ON DUPLICATE KEY UPDATE userid=userid";
+            DatabaseHelper::runQuery($this->pdo, $sql, array($userID, $symbol));
+        }
     }
 }
 
