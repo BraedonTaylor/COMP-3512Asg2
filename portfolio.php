@@ -1,6 +1,7 @@
 <?php
 require_once("portfolio.inc.php");
 require_once("assign_2.classes.inc.php");
+require_once("config.inc.php");
 try {
     $conn = DatabaseHelper::createConnection(array(DBCONNSTRING, DBUSER, DBPASS));
     $portfolioGateway = new PortfolioDB($conn);
