@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function (){
     document.querySelector('#aboutBox').addEventListener('click', (e) => {
-        window.location.href = "about.php";
+        window.location.href = "about.html";
     });
 
     document.querySelector('#companiesBox').addEventListener('click', (e) => {
