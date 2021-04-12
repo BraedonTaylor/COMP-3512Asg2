@@ -5,7 +5,7 @@ body {
 }
 
 .box {
-  color: black;
+  color: #1e6f5c;
   border-radius: 5px;
   padding: 10px;
   font-size: 150%;
@@ -67,6 +67,17 @@ body {
     padding: 5px;
 }
 
+h2 {
+    font-family: "roboto";
+    grid-column: span 2;
+    text-align: center;
+    background-color: #94b5c0;
+    border-radius: 5px;
+    padding: 20px;
+    text-shadow: 2px 2px #9ede73;
+    font-weight: bold;
+}
+
 @media screen and (min-width:499px) {
 
     body {
@@ -84,7 +95,7 @@ body {
     }
     
     .box {
-        color: black;
+        color: #1e6f5c;
         border-radius: 5px;
         padding: 10px;
         font-size: 150%;
