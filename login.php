@@ -1,6 +1,7 @@
 <?php
 require_once ("config.inc.php");
 require_once("assign_2.classes.inc.php");
+require_once ("assign2.navbar.inc.php");
 $db="users"; //database name
 
 session_start();
@@ -40,7 +41,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
    <meta charset="utf-8"/>  
     <title>Login Page</title>  
-    <link rel="stylesheet" href="css/logincss.css">   
+    <link rel="stylesheet" href="css/logincss.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="navbar.js"></script>
 </head>
 <body>

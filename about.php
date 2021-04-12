@@ -1,5 +1,6 @@
 <?php
     require_once ("assign2.navbar.inc.php");
+    session_start();
     $login = false;
     if (isset($_SESSION["userID"]) && $_SESSION["userID"] != null) $login = true;
 ?>
@@ -10,7 +11,7 @@
    <meta charset="utf-8"/>  
     <title>About Page</title>  
     <link rel="stylesheet" href="css/aboutcss.css"> 
-    <script src="aboutstyle.css"></script> 
+    <script src="css/style.css"></script>
     <script src="navbar.js"></script>
 </head>
 <body>
