@@ -1,38 +1,5 @@
-.topnav {
-    margin: 20px 20px;
-    overflow: hidden;
-    background-color: #94b5c0;
-    position: relative;
-    border-radius: 10px;
-}
-
-.hidden{
-    display: none !important;
-}
-
 body {
     background-color: #dbf6e9;
-}
-
-.topnav a, .topnav .logo {
-    float: left;
-    color: #1e6f5c;
-    padding: 14px 30px;
-    text-decoration: none;
-    font-size: 17px;
-    display: block;
-}
-.topnav a.icon{
-    float: right;
-    border-radius: inherit;
-}
-.topnav a:hover{
-    background-color: #5f939a;
-    color: #e6e6e6;
-}
-.topnav .active{
-    background-color: #2b004d;
-    color: white;
 }
 
 .homeBox:hover, #removeAll:hover, .button:hover {
@@ -159,18 +126,6 @@ html body main.favorites-container form {
 
 @media screen and (min-width: 500px) and (max-width: 600px) {
 /*    styling for hamburger nav based off of https://www.w3schools.com/howto/howto_js_mobile_navbar.asp */
-    .topnav a, .topnav .logo {
-        float: none;
-    }
-    .topnav a.icon{
-        float: none;
-        background: #5f939a;
-        display: block;
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-
     main.home-container, main.favorites-container {
         grid-template-columns: auto;
         grid-template-rows: auto;
