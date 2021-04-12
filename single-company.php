@@ -2,7 +2,9 @@
 require_once ("assign_2.classes.inc.php");
 require_once ("config.inc.php");
 require_once ("single-company.inc.php");
+require_once ("assign2.navbar.inc.php");
 session_start();
+$login = true;
 
 try{
 //    setting up connection to database and retrieving data for company identified in query string
@@ -19,6 +21,7 @@ try{
             if(isset($_POST["addFav"])){
                 if ( !isset($_SESSION['userID']) ) {
                     echo "<script>alert('Please login before adding to favorites.')</script>";
+                    $login = false;
                 } else {
                     unset($_POST["addFav"]);
                     $favoritesGateway = new FavoritesDB($conn);//only creates the gateway if POST check returns true
@@ -56,19 +59,7 @@ try{
     </head>
     <body>
 <!-- Nav bar based off of https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
-        <header class="topnav">
-            <img class="logo" alt="logo" src="images/logo.png">
-            <a class="icon"><i class="fa fa-bars"></i></a>
-            <div id="navlinks" class="hidden">
-                <a href="index.php">Home</a>
-                <a href="about.html">About</a>
-                <a href="list.php">Companies</a>
-                <a class="login" href="portfolio.php">Portfolio</a>
-                <a class="login" href="profile.php">Profile</a>
-                <a class="login" href="favorites.php">Favorites</a>
-                <a class="login" href="logout.php">Log Out</a>
-            </div>
-        </header>
+        <?php buildNav($login); ?>
     <main id="single-container">
 <!--        generating company page based on retrieved data-->
         <div class="heading">

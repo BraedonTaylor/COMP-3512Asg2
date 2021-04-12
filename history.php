@@ -2,6 +2,10 @@
 require_once('config.inc.php');
 require_once('history.inc.php');
 require_once('assign_2.classes.inc.php');
+require_once ("assign2.navbar.inc.php");
+session_start();
+$login = false;
+if (isset($_SESSION["userID"]) && $_SESSION["userID"] != null) $login = true;
 
 try {
     $conn = DatabaseHelper::createConnection(array(DBCONNSTRING, DBUSER, DBPASS));
@@ -33,20 +37,7 @@ try {
         <script src="navbar.js"></script>
     </head>
     <body>
-<!-- Nav bar based off of https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
-        <header class="topnav">
-            <img class="logo" alt="logo" src="images/logo.png">
-            <a class="icon"><i class="fa fa-bars"></i></a>
-            <div id="navlinks" class="hidden">
-                <a href="index.php">Home</a>
-                <a href="about.html">About</a>
-                <a href="list.php">Companies</a>
-                <a class="login" href="portfolio.php">Portfolio</a>
-                <a class="login" href="profile.php">Profile</a>
-                <a class="login" href="favorites.php">Favourites</a>
-                <a class="login" href="logout.php">Log Out</a>
-            </div>
-        </header>
+        <?php buildNav($login); ?>
         <h2>Monthly Stock Data</h2>
         <main class="table-container">
             <table id="stock-table">

@@ -1,9 +1,12 @@
 <?php
 require_once ("assign_2.classes.inc.php");
 require_once ("config.inc.php");
+require_once ("assign2.navbar.inc.php");
 session_start();
+$login = true;
 if( !isset($_SESSION['userID']) ) {
     $_SESSION['userID'] = null;
+    $login = false;
 }
 try{
     $conn = DatabaseHelper::createConnection(array(DBCONNSTRING, DBUSER, DBPASS));
@@ -45,20 +48,7 @@ foreach ($fav as $favorite) {
         <script src="navbar.js"></script>
     </head>
     <body>
-<!--    Julianna's take on the hamburger nav bar. Based off of https://www.w3schools.com/howto/howto_js_mobile_navbar.asp -->
-        <header class="topnav">
-            <img class="logo" alt="logo" src="images/logo.png">
-            <a class="icon"><i class="fa fa-bars"></i></a>
-            <div id="navlinks" class="hidden">
-                <a href="index.php">Home</a>
-                <a href="about.html">About</a>
-                <a href="list.php">Companies</a>
-                <a class="login" href="portfolio.php">Portfolio</a>
-                <a class="login" href="profile.php">Profile</a>
-                <a class="login" href="favorites.php">Favorites</a>
-                <a class="login" href="logout.php">Log Out</a>
-            </div>
-        </header>
+        <?php buildNav($login, "favorites"); ?>
         <main class="favorites-container">
         <h2 id="favoritesHeader">Favorites</h2>
             <?php 

@@ -30,7 +30,7 @@ try{
         <script src="js/navbar.js"></script>
     </head>
     <body>
-        <?php buildNav("profile", $login) ?>
+        <?php buildNav($login, "profile") ?>
         <main class="profile-container">
             <h2 id="profile-head">PROFILE</h2>
             <div class="img">

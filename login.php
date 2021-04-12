@@ -44,20 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="navbar.js"></script>
 </head>
 <body>
-    <div class ="main-container">
-    <header class="topnav">
-        <img class="logo" alt="logo" src="images/logo.png">
-        <a class="icon"><i class="fa fa-bars"></i></a>
-        <div id="navlinks" class="hidden">
-            <a href="index.php">Home</a>
-            <a href="about.html">About</a>
-            <a href="list.php">Companies</a>
-            <a class="login" href="portfolio.php">Portfolio</a>
-            <a class="login" href="profile.php">Profile</a>
-            <a class="login" href="favorites.php">Favorites</a>
-        </div>
-    </header>
-    
+    <?php buildNav(false, "login"); ?>
     <main class="grid-container">
         <div id="info">
             <form action = "" method = "post">
@@ -68,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </form>
                 <hr>
                 <h3>No Account?</h3>
-                <label for="signup"><a href="construction.html"><button>Register</button></a></label><br>
+                <label for="signup"><a href="construction.php"><button>Register</button></a></label><br>
                
         </div>
         </main>

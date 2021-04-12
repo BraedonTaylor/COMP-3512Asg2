@@ -1,3 +1,8 @@
+<?php
+    require_once ("assign2.navbar.inc.php");
+    $login = false;
+    if (isset($_SESSION["userID"]) && $_SESSION["userID"] != null) $login = true;
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +14,7 @@
     <script src="navbar.js"></script>
 </head>
 <body>
-    
+    <?php buildNav($login, "about"); ?>
     <div class="grid-container">
         <div class="about-container">
             <h1>About Page</h1>
