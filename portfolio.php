@@ -2,7 +2,7 @@
 require_once("portfolio.inc.php");
 require_once("assign_2.classes.inc.php");
 require_once("config.inc.php");
-require_once ("assign2.navbar.inc.php");
+require_once("assign2.navbar.inc.php");
 session_start();
 $login = false;
 try {
@@ -14,7 +14,7 @@ try {
         $result = $portfolioGateway->getPortfolio($_SESSION["userID"]);
         $login = true;
         //Populate array of stocks
-        
+
         foreach ($result as $row) {
             $portfolio[] = new Stock($row['symbol'], $row['name'], $row['amount'], $row['close']);
         }
@@ -32,7 +32,9 @@ try {
     <title>COMP3512 Assignment 2</title>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/stylePort.css">
+    <link rel="stylesheet" href="css/navbar.css">
     <script src="js/navbar.js"></script>
 </head>
 

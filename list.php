@@ -1,9 +1,9 @@
 <?php
-    include_once ("assign2.navbar.inc.php");
-    session_start();
-    if (isset($_SESSION["userID"]) && $_SESSION["userID"] != null){
-        $login = true;
-    } else $login = false;
+include_once("assign2.navbar.inc.php");
+session_start();
+if (isset($_SESSION["userID"]) && $_SESSION["userID"] != null) {
+    $login = true;
+} else $login = false;
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,7 +13,9 @@
     <title>List of Companies</title>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style222.css">
+    <link rel="stylesheet" href="css/navbar.css">
     <script src="js/navbar.js"></script>
 </head>
 

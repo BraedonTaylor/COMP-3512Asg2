@@ -3,17 +3,6 @@ body {
     font-family: Open Sans, sans-serif;
     font-size: 0.8rem;
 }
-/*    styling for hamburger nav based off of https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
-.topnav a, .topnav .logo {
-    float: none;
-}
-.topnav a.icon{
-    float: none;
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
 
 a tr{
     cursor: pointer;
@@ -41,14 +30,6 @@ a tr{
     grid-column: 2;
 }
 
-#portHeader {
-    grid-column: 1 / span 2;
-}
-
-.headerBox {
-    padding-top: 12px;
-}
-
 #totalPort {
     grid-column: 1 / span 4;
     font-size: 1.2rem;
@@ -58,10 +39,6 @@ a tr{
 h2 {
     font-size: 0.9rem;
     text-decoration: underline;
-}
-
-#headerBox {
-    grid-column: 1;
 }
 
 .b {
@@ -92,7 +69,7 @@ tr:nth-child(even) {
 }
 
 tr:nth-child(odd) {
-   background-color: #5f939a;
+   background-color: #dbf6e9;
 }
 
 th {
@@ -109,46 +86,8 @@ th {
     z-index: 5;
 }
 
-
-.logo {
-    vertical-align: middle;
-    height: 20px;
-}
-
 @media screen and (min-width:500px) {
 
-    .topnav {
-        margin: 20px 20px;
-        overflow: hidden;
-        background-color: #94b5c0;
-        position: relative;
-        border-radius: 10px;
-    }
-    #navlinks{font-family: "roboto";}
-    .topnav a, .topnav .logo {
-        float: left;
-        color: #1e6f5c;
-        padding: 14px 30px;
-        text-decoration: none;
-        font-size: 17px;
-        display: block;
-    }
-    .topnav a.icon{
-        display: none;
-        background-color: #1e6f5c;
-        color: #e6e6e6;
-        border-radius: 7.5px;
-    }
-    .topnav a:hover{
-        background-color: #5f939a;
-        color: white;
-    }
-    a{color: #1e6f5c;}
-    a:hover{color: #5f939a;}
-    .topnav .active{
-        background-color: #1e6f5c;
-        color: white;
-    }
     body {
         font-size: 1rem;
     }
