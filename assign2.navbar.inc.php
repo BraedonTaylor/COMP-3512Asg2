@@ -11,7 +11,7 @@ function buildNav($login, $page = null){ //login is true/false based on whether 
             <a class="<?php if ($page === "index"){ ?> active <?php } ?>" href="index.php">Home</a>
             <a class="<?php if ($page === "about"){ ?> active <?php } ?>" href="about.php">About</a>
             <a class="<?php if ($page === "list"){ ?> active <?php } ?>" href="list.php">Companies</a>
-            <?php if ($login === true) { ?>
+            <?php if ($login === true) { ?> <!--if login user is not logged in, does not display the following links-->
             <a class="<?php if ($page === "portfolio"){ ?> active <?php } ?>" href="portfolio.php">Portfolio</a>
             <a class="<?php if ($page === "profile"){ ?> active <?php } ?>" href="profile.php">Profile</a>
             <a class="<?php if ($page === "favorites"){ ?> active <?php } ?>" href="favorites.php">Favorites</a>

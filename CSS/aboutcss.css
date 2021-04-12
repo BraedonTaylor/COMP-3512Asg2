@@ -7,9 +7,9 @@
 }
 
 
-.hidden{
-  display: none !important;
-}
+/*.hidden{*/
+/*  display: none !important;*/
+/*} this was causing the navbar to hide, but logo is still large - julianna*/
 
 body {
   background-color: #dbf6e9;
