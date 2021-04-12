@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function (){
     document.querySelector('#aboutBox').addEventListener('click', (e) => {
-        window.location.href = "about.html";
+        window.location.href = "about.php";
     });
 
     document.querySelector('#companiesBox').addEventListener('click', (e) => {
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function (){
         });
 
         document.querySelector('#signupBox').addEventListener('click', (e) => {
-            window.location.href = "construction.html";
+            window.location.href = "construction.php";
         });
     } catch(error) {
         console.error(error.message);
