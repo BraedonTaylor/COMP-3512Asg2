@@ -10,11 +10,10 @@ try{
 //    setting up connection to database and retrieving data for company identified in query string
     $conn = DatabaseHelper::createConnection(array(DBCONNSTRING, DBUSER, DBPASS));
 
-    //these two if statements are just for ease of programming. can alter/remove if needed
     if (isset($_GET["symbol"])){
         $symbol = $_GET["symbol"];//checking for requested company via media query
-    } else {
-        $symbol = "A";
+    } else {//pops an error if no query string
+        echo "<script>alert('Invalid url - Page can only be accessed from the Companies page')</script>";
     }
     
     if ($_SERVER['REQUEST_METHOD'] === "POST") {//checking to see if server request was via POST  
@@ -59,7 +58,6 @@ try{
         <script src="js/navbar.js"></script>
     </head>
     <body>
-<!-- Nav bar based off of https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
         <?php buildNav($login); ?>
     <main id="single-container">
 <!--        generating company page based on retrieved data-->
