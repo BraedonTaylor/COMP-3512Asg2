@@ -10,9 +10,9 @@
   
    <meta charset="utf-8"/>  
     <title>About Page</title>  
-    <link rel="stylesheet" href="css/aboutcss.css"> 
-    <script src="css/style.css"></script>
-    <script src="navbar.js"></script>
+    <script src="js/navbar.js"></script>
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/aboutcss.css">
 </head>
 <body>
     <?php buildNav($login, "about"); ?>
