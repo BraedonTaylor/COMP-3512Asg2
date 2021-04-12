@@ -1,38 +1,8 @@
 body {
     background-color: #dbf6e9;
 }
-.topnav {
-    margin: 20px 20px;
-    overflow: hidden;
-    background-color: #94b5c0;
-    position: relative;
-    border-radius: 10px;
-}
-#navlinks{font-family: "roboto";}
-.topnav a, .topnav .logo {
-    float: left;
-    color: #1e6f5c;
-    padding: 14px 30px;
-    text-decoration: none;
-    font-size: 17px;
-    display: block;
-}
-.topnav a.icon{
-    display: none;
-    background-color: #1e6f5c;
-    color: #e6e6e6;
-    border-radius: 7.5px;
-}
-.topnav a:hover{
-    background-color: #5f939a;
-    color: white;
-}
 a{color: #1e6f5c;}
 a:hover{color: #5f939a;}
-.topnav .active{
-    background-color: #1e6f5c;
-    color: white;
-}
 #profile-head{
     font-family: "roboto";
     grid-column: span 2;
@@ -109,11 +79,7 @@ div.heading{
     text-align: left;
 }
 .company-logo{width: 400px;}
-.logo {
-    vertical-align: middle;
-    height: 20px;
-}
-.button, #removeAll {
+.button{
     background-color: #1e6f5c; /* Green */
     border: none;
     color: white;
@@ -131,23 +97,6 @@ div.heading{
     background-color: #5f939a;
 }
 @media screen and (max-width: 500px){
-/*    styling for hamburger nav based off of https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
-    .topnav a, .topnav .logo {
-        float: none;
-    }
-    .topnav a.icon{
-        float: none;
-        display: block;
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-    .hidden{
-        display: none !important;
-    }
-    main.profile-container {
-        grid-template-columns: auto;
-    }
     div.profile{
         grid-row: 3;
         grid-column: 1;
