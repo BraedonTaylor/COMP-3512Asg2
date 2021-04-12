@@ -1,5 +1,7 @@
 <?php
-function buildNav($login, $page = null){
+function buildNav($login, $page = null){ //login is true/false based on whether or not $_SESSION["userID"] is set and not null
+    //$page tells the function which <a> to add the "active" class to; both are passed in by the individual pages
+    //$page is set to null if the page isn't on the nav menu
     ?>
     <!-- Nav bar based off of https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
     <header class="topnav">
