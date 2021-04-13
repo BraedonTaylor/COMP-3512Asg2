@@ -23,6 +23,9 @@
 body {
     background-color: #dbf6e9;
 }
+div#info form h1 {
+    text-shadow: 2px 2px #9ede73;
+}
 
 div#info form h1, div#info form label, div#info h3 {
     font-family: "roboto";

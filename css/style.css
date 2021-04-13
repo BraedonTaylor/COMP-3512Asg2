@@ -2,7 +2,7 @@ body {
     background-color: #dbf6e9;
 }
 
-#profile-head{
+#profile-head {
     font-family: "roboto";
     grid-column: span 2;
     text-align: center;
@@ -11,12 +11,12 @@ body {
     padding: 20px;
 }
 
-h2{
+h1, h2 {
     text-shadow: 2px 2px #9ede73;
     font-weight: bold;
 }
 
-main.profile-container{
+main.profile-container {
     color: #1e6f5c;
     margin: 20px;
     padding: 20px;
@@ -27,7 +27,7 @@ main.profile-container{
     grid-template-rows: auto 250px;
 }
 
-div.profile{
+div.profile {
     grid-column: 2;
     grid-row: 2;
     background-color: #94b5c0;
@@ -38,23 +38,23 @@ div.profile{
     border-radius: 5px;
 }
 
-div strong, div span{
+div strong, div span {
     font-family: "roboto";
     border-bottom: thin solid #1a8fc5;
     padding: 15px 5px;
     font-size: 17px;
 }
 
-div strong{
+div strong {
     margin-left: 10px;
 }
 
-div.img{
+div.img {
     grid-column: 1;
     grid-row: 2;
 }
 
-img#profile{
+img#profile {
     width: 200px;
     border-style: outset;
     border-color: #5f939a;
@@ -67,14 +67,14 @@ main#single-container {
     margin: 20px;
 }
 
-div.heading{
+div.heading {
     background-color: #94b5c0;
     border-radius: 10px;
     padding: 10px;
     text-align: center;
 }
 
-.company-style{
+.company-style {
     background-color: #94b5c0;
     font-size: 17px;
     margin-top: 20px;
@@ -82,7 +82,7 @@ div.heading{
     border-radius: 10px;
 }
 
-#info-columns{
+#info-columns {
     padding-top: 30px;
     display: grid;
     width: auto;
@@ -91,7 +91,9 @@ div.heading{
     text-align: left;
 }
 
-.company-logo{width: 400px;}
+.company-logo {
+    width: 400px;
+}
 
 .logo {
     vertical-align: middle;
@@ -112,12 +114,12 @@ div.heading{
     box-shadow: 2px 2px 5px darkolivegreen;
 }
 
-.button:hover{
+.button:hover {
     cursor: pointer;
     background-color: #5f939a;
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 500px) {
 /*    styling for hamburger nav based off of https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
     .topnav a, .topnav .logo {
         float: none;
@@ -170,7 +172,7 @@ div.heading{
         min-width: 250px;
     }
 
-    h2 {
+    h1 {
         text-align: left;
     }
 }

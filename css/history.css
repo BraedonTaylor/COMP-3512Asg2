@@ -62,7 +62,11 @@ a {
 }
 
 h2 {
-    text-shadow: none;
+    text-shadow: 2px 2px #9ede73;
+    font-family: "roboto";
+    color: #1e6f5c;
+    text-align: center;
+    /* text-shadow: none; */
 }
 
 

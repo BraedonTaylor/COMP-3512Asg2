@@ -51,11 +51,10 @@ foreach ($fav as $favorite) {
     <body>
         <?php buildNav($login, "favorites"); ?>
         <main class="favorites-container">
-        <h2 id="favoritesHeader">Favorites</h2>
+        <h1 id="favoritesHeader">Favorites</h1>
             <?php 
             foreach ($fav as $favorite) {
                 $rvString = $favorite["symbol"] . "remove";
-                // var_dump($favorite);
                 ?>
                     <div id="<?=$favorite["symbol"]?>" class="favoritesListing">
                         <img class="favorites favoritesIcon" alt="<?=$favorite["symbol"]?>" src="images/logos/<?=$favorite["symbol"]?>.svg">

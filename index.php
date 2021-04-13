@@ -33,7 +33,7 @@ try{
     <body>
         <?php buildNav($login, "index"); ?>
         <main class="home-container">
-            <h2 id="homeHeader">Stock Browser</h2>
+            <h1 id="homeHeader">Stock Browser</h1>
             <div id="aboutBox" class="homeBox">About</div>
             <div id="companiesBox" class="homeBox">Companies</div>
             <?php if (isset($userID)) { ?>

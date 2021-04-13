@@ -25,7 +25,7 @@ if (isset($_SESSION["userID"]) && $_SESSION["userID"] != null) {
         <div class="box b">
             <div id="magnify"><img id="magImage"></div>
             <section>
-                <h2>List Of Companies</h2>
+                <h1>List Of Companies</h1>
                 Filter: <input type="text" class="search" placeholder="Search for a Company"> <button id="clearButton" class="buttons">Clear Filter</button>
                 <p id="spacer"></p>
                 <section id="companyList"></section>

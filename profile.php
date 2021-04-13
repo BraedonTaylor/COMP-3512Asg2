@@ -33,7 +33,7 @@ try{
     <body>
         <?php buildNav($login, "profile"); ?>
         <main class="profile-container">
-            <h2 id="profile-head">PROFILE</h2>
+            <h1 id="profile-head">Profile</h1>
             <div class="img">
                 <img id="profile" alt="profile picture" src="https://randomuser.me/api/portraits/women/<?= $userID?>.jpg">
             </div>
