@@ -8,6 +8,7 @@
    <meta charset="utf-8"/>  
     <title>Register</title>  
     <link rel="stylesheet" href="css/registercss.css"> 
+    <link rel="stylesheet" href="css/navbar.css">
     <script src="navbar.js"></script>
 </head>
 <body>
