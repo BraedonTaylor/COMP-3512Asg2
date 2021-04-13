@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="css/logincss.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
-    <script src="navbar.js"></script>
+    <script src="js/navbar.js"></script>
 </head>
 <body>
     <?php buildNav(false, "login"); ?>

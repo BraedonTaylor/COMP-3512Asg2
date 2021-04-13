@@ -35,7 +35,7 @@ try {
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/history.css">
         <link rel="stylesheet" href="css/navbar.css">
-        <script src="navbar.js"></script>
+        <script src="js/navbar.js"></script>
     </head>
     <body>
         <?php buildNav($login); ?>

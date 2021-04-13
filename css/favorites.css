@@ -1,0 +1,183 @@
+body {
+    background-color: #dbf6e9;
+}
+
+.homeBox:hover, #removeAll:hover, .button:hover {
+    background-color: #5f939a;
+    color: #e6e6e6;
+}
+
+main.home-container, main.favorites-container {
+    color: #1e6f5c;
+    margin: 20px;
+    padding: 20px;
+    display: grid;
+    width: auto;
+    grid-gap: 20px;
+    grid-template-columns: 25% 25% 25% auto;
+    grid-template-rows: auto;
+}
+
+.homeBox, .favoritesListing {
+    /* text-align: center; */
+    font-family: "roboto";
+    font-weight: bold;
+    background-color: #94b5c0;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 8px 8px 20px #1a8fc5;
+}
+
+#homeHeader, #favoritesHeader, .homeBox, #navlinks a {
+    font-family: "roboto";
+}
+
+.logo {
+    vertical-align: middle;
+    height: 20px;
+}
+
+.favoritesIcon {
+    height: 50px;
+    max-width: 100px;
+}
+
+.favorites {
+    display: inline-block;
+}
+
+#favoritesHeader, #homeHeader {
+    text-align: center;
+    text-shadow: 2px 2px #9ede73;
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 1;
+}
+
+#aboutBox {
+    grid-column: 2 / span 2;
+    grid-row: 2 / span 1;
+}
+
+#companiesBox {
+    grid-column: 2 / span 2;
+    grid-row: 3 / span 1;
+}
+
+#portfolioBox {
+    grid-column: 2 / span 2;
+    grid-row: 4 / span 1;
+}
+
+#favoritesBox {
+    grid-column: 2 / span 2;
+    grid-row: 5 / span 1;
+}
+
+#profileBox {
+    grid-column: 2 / span 2;
+    grid-row: 6 / span 1;
+}
+
+#logoutBox {
+    grid-column: 2 / span 2;
+    grid-row: 7 / span 1;
+}
+
+#loginBox {
+    grid-column: 2 / span 2;
+    grid-row: 4 / span 1;
+}
+
+#signupBox {
+    grid-column: 2 / span 2;
+    grid-row: 5 / span 1;
+}
+
+/* favorites */
+.favoritesListing {
+    grid-column: 2 / span 2;
+    grid-row: auto;
+}
+
+
+
+.button, #removeAll {
+    background-color: #4a7edd; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 12px;
+    text-align: center;
+    border-radius: 2px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.favoritesIcon, .favoritesSymbol, .favoritesName  { 
+    width:20%;
+    margin: 10px;
+    text-align: center;
+}
+
+html body main.favorites-container form {
+    grid-row: auto;
+    grid-column: 2;
+}
+
+@media screen and (min-width: 500px) and (max-width: 600px) {
+/*    styling for hamburger nav based off of https://www.w3schools.com/howto/howto_js_mobile_navbar.asp */
+    main.home-container, main.favorites-container {
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+    }
+
+    .favoritesListing {
+        grid-column: 1 / span 4;
+        grid-row: auto;
+    }
+
+    #homeHeader {
+        grid-column: 1 / span 2;
+        grid-row: 1 / span 1;
+    }
+
+    #favoritesHeader {
+        grid-column: 1 / span 4;
+        grid-row: 1 / span 1;
+    }
+
+    #aboutBox {
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 1;
+    }
+    
+    #companiesBox {
+        grid-column: 2 / span 1;
+        grid-row: 2 / span 1;
+    }
+    
+    #portfolioBox {
+        grid-column: 1 / span 1;
+        grid-row: 3 / span 1;
+    }
+    
+    #favoritesBox {
+        grid-column: 2 / span 1;
+        grid-row: 3 / span 1;
+    }
+    
+    #profileBox {
+        grid-column: 1 / span 1;
+        grid-row: 4 / span 1;
+    }
+    
+    #logoutBox {
+        grid-column: 2 / span 1;
+        grid-row: 4 / span 1;
+    }
+
+    html body main.favorites-container form {
+        grid-row: auto;
+        grid-column: 1;
+    }
+}
