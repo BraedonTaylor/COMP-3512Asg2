@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function anchorMaker(s) {
         const anchor = elementMaker("a");
         anchor.setAttribute("href", `single-company.php?symbol=${s}`);
-        anchor.className = "anchors";
+        anchor.classList.add("anchors");
         return anchor;
     }
 
