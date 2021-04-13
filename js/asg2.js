@@ -152,7 +152,8 @@ document.addEventListener("DOMContentLoaded", function () {
     function anchorMaker(s) {
         const anchor = elementMaker("a");
         anchor.setAttribute("href", `single-company.php?symbol=${s}`);
-        anchor.className = "anchors";
+        anchor.classList.add("anchors");
+        anchor.classList.add("border");
         return anchor;
     }
 
@@ -163,7 +164,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const logo = elementMaker('img');
         logo.setAttribute('src', `./images/logos/${c.symbol}.svg`);
         logo.setAttribute(`alt`, `${c.name}`);
-        logo.setAttribute(`class`, `clogo`)
+        anchor.classList.add("anchors");
+        anchor.classList.add("border");
         return logo;
     }
 });
