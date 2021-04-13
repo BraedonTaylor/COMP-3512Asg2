@@ -16,6 +16,7 @@ a{
 h2{
     text-shadow: 2px 2px #9ede73;
     font-weight: bold;
+
 }
 main.profile-container{
     color: #1e6f5c;
@@ -62,6 +63,7 @@ main#single-container {
 span.heading {
     float: left;
     padding: 10px;
+    margin-right: 20px;
 }
 .company-style{
     background-color: #94b5c0;
@@ -81,7 +83,7 @@ span.heading {
 .company-logo{
     height: 17.5vh;
     width: auto;
-    max-width: 200px;
+    max-height: 100px;
 }
 .button{
     background-color: #1e6f5c; /* Green */
@@ -117,12 +119,16 @@ span.heading {
     .company-sub{grid-row: 2;}
     div strong{margin: 0;}
     .company-logo{
+        float: right;
         height: auto;
+        width: 35vw;
         max-height: 200px;
-        min-height: 100px;
-        width: 80%;
-        max-width: 200px;
         min-width: 150px;
+    }
+    span.heading{
+        float: right;
+        margin: 0;
+        padding-right: 15px;
     }
     h2{text-align: left;}
 }
