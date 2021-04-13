@@ -44,8 +44,11 @@
 
 @media screen and (max-width: 500px){
     /*    styling for hamburger nav based off of https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
-    .topnav a, .topnav .logo {
+    .topnav a{
         float: none;
+    }
+    .topnav .logo{
+        float: left;
     }
     .topnav a.icon{
         float: none;
