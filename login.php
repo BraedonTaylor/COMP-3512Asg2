@@ -43,6 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Login Page</title>  
     <link rel="stylesheet" href="css/logincss.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
     <script src="navbar.js"></script>
 </head>
 <body>

@@ -1,34 +1,7 @@
-.topnav a, .topnav .logo {
-    float: left;
-    color: #1e6f5c;
-    padding: 14px 30px;
-    text-decoration: none;
-    font-size: 17px;
-    display: block;
-}
-.topnav a.icon{
-    float: right;
-    border-radius: inherit;
-}
-.topnav a:hover{
-    background-color: #5f939a;
-    color: #e6e6e6;
-}
-.topnav .active{
-    background-color: #2b004d;
-    color: white;
-}
-
 .homeBox:hover, #removeAll:hover, .button:hover {
     background-color: #5f939a;
     color: #e6e6e6;
 }
-
-.logo {
-    vertical-align: middle;
-    height: 20px;
-}
-
 
 .grid-container{
   display: grid;
