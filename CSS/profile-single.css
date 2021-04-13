@@ -1,8 +1,10 @@
 body {
     background-color: #dbf6e9;
 }
-a{color: #1e6f5c;}
-a:hover{color: #5f939a;}
+a{
+    color: white;
+    text-decoration: none;
+}
 #profile-head{
     font-family: "roboto";
     grid-column: span 2;
@@ -57,11 +59,9 @@ main#single-container {
     color: #1e6f5c;
     margin: 20px;
 }
-div.heading{
-    background-color: #94b5c0;
-    border-radius: 10px;
+span.heading {
+    float: left;
     padding: 10px;
-    text-align: center;
 }
 .company-style{
     background-color: #94b5c0;
@@ -78,13 +78,17 @@ div.heading{
     grid-template-rows: repeat(2, 50%);
     text-align: left;
 }
-.company-logo{width: 400px;}
+.company-logo{
+    height: 17.5vh;
+    width: auto;
+    max-width: 200px;
+}
 .button{
     background-color: #1e6f5c; /* Green */
     border: none;
     color: white;
     padding: 10px 12px;
-    margin: 5px;
+    margin: 10px;
     text-align: center;
     border-radius: 5px;
     text-decoration: none;
@@ -112,6 +116,13 @@ div.heading{
     /*keeping sub-industry under sector */
     .company-sub{grid-row: 2;}
     div strong{margin: 0;}
-    .company-logo{width: 80%; min-width: 250px;}
+    .company-logo{
+        height: auto;
+        max-height: 200px;
+        min-height: 100px;
+        width: 80%;
+        max-width: 200px;
+        min-width: 150px;
+    }
     h2{text-align: left;}
 }
