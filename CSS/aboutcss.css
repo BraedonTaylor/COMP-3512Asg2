@@ -19,11 +19,9 @@ html body div.grid-container img{
 }
 
 .column {
-  align-items: center;
   float: left;
   width: 20%;
-  margin-bottom: 16px;
-  padding: 0 8px;
+  margin-bottom: 5px;
 }
 
 .profile {
@@ -45,14 +43,13 @@ html body div.grid-container img{
   box-shadow: 8px 8px 20px #1a8fc5;
 }
 
-.container {
-  padding: 0 16px;
-}
+
 
 .container::after, .row::after {
   content: "";
   clear: both;
   display: table;
+  margin: auto;
 }
 
 .title {
@@ -76,23 +73,6 @@ html body div.grid-container img{
   cursor: pointer;
   background-color: #5f939a;
 }
-
-.team{
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: rgb(0, 0, 0);
-  text-align: center;
-  cursor: pointer;
-  border-radius: 50px;
-}
-
-.team:hover {
-  background-color: rgb(40, 94, 33);
-}
-
 
 @media screen and (max-width: 1000px) {
   .column {

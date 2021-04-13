@@ -13,16 +13,31 @@
     grid-gap: 10px;
 }
 
+span{
+    color: red;
+}
+
+#align{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    justify-self: center;
+}
+
+
+form{
+    align-self: auto;
+}
+
 .main-container{
     display: grid;
     grid-template-rows: 1fr, 1fr;
 }
 
-
-/*---- COLOURING ----*/
 body {
     background-color: #dbf6e9;
 }
+
 div#info form h1 {
     text-shadow: 2px 2px #9ede73;
 }
@@ -41,129 +56,46 @@ div#info form h1, div#info form label, div#info h3 {
     border-radius: 50px;
 }
 
-header {
-    background-color: #1a1a2e;
+.button{
+    background-color: #1e6f5c; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 12px;
+    margin: 5px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    box-shadow: 2px 2px 5px darkolivegreen;
+  }
+
+  .button:hover{
+    cursor: pointer;
+    background-color: #5f939a;
+  }
+
+input[type=submit] {
+background-color: #1e6f5c; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 12px;
+  margin: 5px;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  box-shadow: 2px 2px 5px darkolivegreen;
 }
 
-#filterBox {
-    background-color: #16213e;
-    border-color: #0f3460;
-}
-
-#tableHeader th {
-    position: sticky;
-    top: 0;
-    background-color: #1a1a2e;
-}
-
-.chart {
-    background-color: #16213e;
-}
-
-
-
-/*--- SETTING OVERFLOW PROPERTIES AND SIZING OF INTERNALS ---*/
-
-#companyList{
-    text-align: left;
-    list-style: none;
-    height: 750px;
-    overflow-y: scroll;
-    width: 100%;
-    padding: 0;
-}
-
-#charts {
-    overflow-y: scroll;
+#hover:hover{
+    cursor: pointer;
+    background-color: #5f939a;
 }
 
 #info{
  text-align: center;
 }
-
-#companyList>li:hover {
-    cursor: pointer;
-}
-
-#stockData {
-    height: 660px;
-    overflow-y: scroll;
-}
-
-#stockTable {
-    width: 100%;
-}
-
-#tableHeader {
-    cursor: pointer;
-}
-
-#calculations table { 
-    width: 100%;
-}
-
-#infoInternal>img {
-    height: 70px;
-    max-width: 400px;
-    background-color: white;
-    border-radius: 20px;
-    padding: 10px;
-}
-
-#financeTable {
-    width: 100%;
-    height: 100%;
-}
-
-/*--- TEXT SIZING AND POSITION STUFF ---*/
-
-div > #infoInternal{
-  font-size: 16px;
-}
-
-th {
-    text-align: right;
-}
-
-td {
-    font-size: 14px;
-    text-align: right;
-}
-
-.financeRows td {
-    font-size: 20px;
-}
-
-.financeDescriptor {
-    text-align: left;
-}
-
-#financeYearHeader {
-    text-align: left;
-}
-
-#financeTable {
-    height: 75%;
-}
-
-#stock>h2 {
-    width: 50%;
-    float: left;
-}
-
-#stock button {
-    margin-top: 20px;
-    float: right;
-}
-
-#stockData {
-    margin-top: 100px;
-    padding-right: 5px;
-}
-
-#filterBox {
-    float: left;
-}
-
 
 
