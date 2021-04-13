@@ -89,6 +89,12 @@ background-color: #1e6f5c; /* Green */
   box-shadow: 2px 2px 5px darkolivegreen;
 }
 
+input[type=text], input[type=password] { 
+    padding: 12px;
+    border: 1px solid black
+}
+
+
 #hover:hover{
     cursor: pointer;
     background-color: #5f939a;

@@ -11,7 +11,7 @@ $_SESSION["userID"] = null;
 //If user submits the form
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //If a username is posted
-    if (isset($_POST['username'])) {
+    if (isset($_POST['username']) && $_POST['username'] != null) {
         
         //Connect to database with login creds
         $conn = DatabaseHelper::createConnection(array(DBCONNSTRING, DBUSER, DBPASS));
@@ -33,13 +33,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 
                 // If false, display error message
         } else {
-            echo "<span>Incorrect Password, please try again.</span>"; 
-        }
-        }else{
-            echo "<span>No email found.</span>";
-        }
-        }else{
-        echo "<span>No username</span>";
+                echo "<script>alert('Incorrect Password, please try again.')</script>"; 
+            }
+        } else {
+            echo "<script>alert('Email not found.')</script>";
+        } 
+    } else {
+        echo "<script>alert('No username submitted.')</script>";
     }
 }
 ?>
@@ -72,7 +72,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label for="signup"><a href="construction.php"><button class = "button">Register</button></a></label><br> 
         </div>
         </main>
-    </div>
 </body>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9kMLcamhEVkimas5Qp7PQyl-ZEYpIPHQ"></script>
 </html>
