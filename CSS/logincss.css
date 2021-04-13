@@ -24,10 +24,14 @@ body {
     background-color: #dbf6e9;
 }
 
+div#info form h1, div#info form label, div#info h3 {
+    font-family: "roboto";
+}
+
 .grid-container > div, .grid-container-two > div {
     padding: 20px;
     font-size: 20px;
-    background-color: #8b8b8b;
+    background-color: #94b5c0;
     box-shadow: 8px 8px 20px #1a8fc5;
     width: 50%;
     justify-self: center;
