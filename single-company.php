@@ -4,7 +4,7 @@ require_once ("config.inc.php");
 require_once ("single-company.inc.php");
 require_once ("assign2.navbar.inc.php");
 session_start();
-$login = true;
+$login = false;
 
 try{
 //    setting up connection to database and retrieving data for company identified in query string
@@ -14,14 +14,13 @@ try{
     if (isset($_GET["symbol"])){
         $symbol = $_GET["symbol"];//checking for requested company via media query
     } else {
-        $symbol = "A";
+        echo "<script>alert('Please access from the companies page.')</script>";
     }
 
     if ($_SERVER['REQUEST_METHOD'] === "POST") {//checking to see if server request was via POST
             if(isset($_POST["addFav"])){
                 if ( !isset($_SESSION['userID']) ) {
                     echo "<script>alert('Please login before adding to favorites.')</script>";
-                    $login = false;
                 } else {
                     unset($_POST["addFav"]);
                     $favoritesGateway = new FavoritesDB($conn);//only creates the gateway if POST check returns true
@@ -40,7 +39,7 @@ try{
                 header("Location: history.php?symbol=$symbol");//redirect to company's history page if the "history" button was clicked
             }
     }
-
+        if (isset($_SESSION["userID"]) && $_SESSION["userID"] != null) $login = true;
         $companyGateway = new CompanyDB($conn);//gateway is only created after the POST check to save resources
         $company = $companyGateway->getOneForSymbol($symbol);
 
