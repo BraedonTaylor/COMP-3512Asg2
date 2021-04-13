@@ -40,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
    <meta charset="utf-8"/>  
     <title>Login Page</title>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/logincss.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
@@ -51,16 +52,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div id="info">
             <form action = "" method = "post">
                 <h1>Login</h1>
-                <label>Email:</label><input type = "text" name = "username" placeholder="enter email"><br><br>
-                <label>Password:</label><input type = "password" name = "password" placeholder="enter password"><br>
+                <label>Email:</label><br><input type = "text" name = "username" placeholder="Enter email"><br><br>
+                <label>Password:</label><br><input type = "password" name = "password" placeholder="Enter password"><br><br>
                 <input type = "submit" value = "Login"/>
             </form>
                 <hr>
                 <h3>No Account?</h3>
-                <label for="signup"><a href="construction.php"><button>Register</button></a></label><br>
+                <label for="signup"><a href="construction.php"><button class="button">Register</button></a></label><br>
                
         </div>
-        </main>
+    </main>
 </body>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9kMLcamhEVkimas5Qp7PQyl-ZEYpIPHQ"></script>
 </html>

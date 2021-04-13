@@ -42,7 +42,7 @@ div#info form h1 {
     text-shadow: 2px 2px #9ede73;
 }
 
-div#info form h1, div#info form label, div#info h3 {
+div#info form h1, div#info form label, div#info h3, label {
     font-family: "roboto";
 }
 
@@ -51,7 +51,8 @@ div#info form h1, div#info form label, div#info h3 {
     font-size: 20px;
     background-color: #94b5c0;
     box-shadow: 8px 8px 20px #1a8fc5;
-    width: 50%;
+    width: 100%;
+    max-width: 500px;
     justify-self: center;
     border-radius: 50px;
 }
