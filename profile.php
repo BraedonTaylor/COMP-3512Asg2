@@ -26,14 +26,14 @@ try{
         <meta charset="utf-8">
         <title>Profile</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/navbar.css">
+        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="stylesheet" href="CSS/navbar.css"
         <script src="js/navbar.js"></script>
     </head>
     <body>
         <?php buildNav($login, "profile"); ?>
         <main class="profile-container">
-            <h1 id="profile-head">Profile</h1>
+            <h2 id="profile-head">PROFILE</h2>
             <div class="img">
                 <img id="profile" alt="profile picture" src="https://randomuser.me/api/portraits/women/<?= $userID?>.jpg">
             </div>
