@@ -1,7 +1,7 @@
 body {
     background-color: #dbf6e9;
     font-family: Open Sans, sans-serif;
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 
 a tr{
@@ -9,31 +9,32 @@ a tr{
 }
 
 .container {
-    grid-template-columns: 1;
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 0.5fr;
     grid-template-rows: 2;
 }
 
 .image {
-    width: 40px;
+    max-height: 80px;
+    width: 65px;
 }
 
 .box {
-    color:black;
+    color: #1e6f5c;
     border-radius: 5px;
     padding: 10px;
     font-size: 150%;
     background-color: #94b5c0;
-    height: 650px;
     display: block;
-    overflow: hidden;
-    grid-row: 2;
-    grid-column: 2;
+    height: 100%;
+    grid-column: 2 / span 2;
 }
 
 #totalPort {
     grid-column: 1 / span 4;
     font-size: 1.2rem;
-    margin-top: 50px;
+    margin-top: 10px;
+    z-index: 5;
 }
 
 h2 {
@@ -46,7 +47,7 @@ h2 {
 }
 
 #stockView {
-    height: 500px;
+    height: 700px;
     overflow-y: scroll;
 }
 
@@ -56,12 +57,13 @@ table, th, td {
 }
 
 th, td {
-    padding: 15px;
+    padding-left: 65px;
+    padding-right: 65px;
     text-align: left;
 }  
 
 td {
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 tr:nth-child(even) {
@@ -97,51 +99,64 @@ th {
     font-weight: bold;    
 }
 
-@media screen and (min-width:500px) {
+/*Custom scroll bar*/
+div#stockView::-webkit-scrollbar {
+    width: 10px;
+    margin-right: 10px;
+}
 
+div#stockView::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+div#stockView::-webkit-scrollbar-thumb {
+  background: #7a7a7a;
+}
+
+div#stockView::-webkit-scrollbar-thumb:hover {
+  background: #3d3d3d;
+}
+
+@media screen and (max-width:1250px) {
     body {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
 
     .container {
-        display: grid;
-        grid-template-columns: 0.5fr 2fr 0.5fr;
+        grid-template-columns: 1;
         grid-template-rows: 2;
         
     }
 
     .box {
-    color: #1e6f5c;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 150%;
-    background-color: #94b5c0;
-    display: block;
-    height: 100%;
+        color:black;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 150%;
+        background-color: #94b5c0;
+        height: 700px;
+        width: 100%;
+        display: block;
+        overflow: hidden;
+        grid-row: 2;
+        grid-column: 2;
     }
 
     td {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     th, td {
-        padding-left: 65px;
-        padding-right: 65px;
+        padding: 15px;
         text-align: left;
     }  
     .image {
-        max-height: 80px;
-        width: 65px;
+        width: 40px;
     }
     #stockView {
-        height: 700px;
+        height: 500px;
     }
 
     td {
         color: black;
-    }
-
-    .logo {
-        vertical-align: middle;
-        height: 20px;
     }
 }
