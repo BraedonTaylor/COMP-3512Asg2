@@ -43,7 +43,10 @@ html body div.grid-container img{
   box-shadow: 8px 8px 20px #1a8fc5;
 }
 
-
+img {
+    max-height: 250px;
+    max-width: 250px;
+}
 
 .container::after, .row::after {
   content: "";

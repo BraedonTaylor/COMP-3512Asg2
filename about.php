@@ -23,7 +23,10 @@
             <h2>COMP-3512 Web 2 (Winter 2021)</h2>
             <h2>Mount Royal University</h2>
             <h2>Randy Connolly</h2>
-            <h2>Tech Used: Placeholder</h2>
+            <h2>Tech Used:</h2>
+            <p>W3 Schools for the Navbar</p>
+            <p>Loading animations from CSSWAND.dev</p>
+            <a href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">Hamburger icon from Font Awesome API</a>
             <p><a href = "https://github.com/BraedonTaylor/COMP-3512Asg2"><button class="button">Team Github</button></a></p>
             <label for="Go Back"><a href="index.php"><button class="button">Go Back</button></a></label><br><br>
           </div>

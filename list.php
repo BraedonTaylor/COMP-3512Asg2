@@ -16,6 +16,7 @@ if (isset($_SESSION["userID"]) && $_SESSION["userID"] != null) {
     <link rel="stylesheet" href="css/style222.css">
     <link rel="stylesheet" href="css/navbar.css">
     <script src="js/navbar.js"></script>
+    <script src="js/list.js"></script>
 </head>
 
 <body>
@@ -27,7 +28,7 @@ if (isset($_SESSION["userID"]) && $_SESSION["userID"] != null) {
                 <h1>List Of Companies</h1>
                 Filter: <input type="text" class="search" placeholder="Search for a Company"> <button id="clearButton" class="button">Clear Filter</button>
                 <p id="spacer"></p>
-                <div class='loader hide' id='companyLoader'></div>
+                <div class='loader' id='companyLoader'></div>
                 <section id="companyList"></section>
             </section>
         </div>

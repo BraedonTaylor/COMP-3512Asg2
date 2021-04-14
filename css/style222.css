@@ -92,6 +92,24 @@ h1 {
     max-width: 150px;
 }
 
+#companyList::-webkit-scrollbar {
+    width: 10px;
+    margin-right: 10px;
+}
+
+#companyList::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+#companyList::-webkit-scrollbar-thumb {
+  background: #7a7a7a;
+}
+
+#companyList::-webkit-scrollbar-thumb:hover {
+  background: #3d3d3d;
+}
+
+
 @media screen and (max-width: 500px) {
     #companyList {
         display: none;
